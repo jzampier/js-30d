@@ -267,16 +267,66 @@ console.log(agree);
 // let ratePerHour = prompt('Enter Rate per Hour')
 // alert(`Your weekly earning is ${hours*ratePerHour}`)
 
-let name = 'julio';
-let lastName = 'zampier';
-name.length > 7 ? console.log('Name is long') : console.log('Name is short');
+// let name = 'julio';
+// let lastName = 'zampier';
+// name.length > 7 ? console.log('Name is long') : console.log('Name is short');
 
-name.length > lastName.length
-  ? console.log(
-      `Your first name, ${name} is longer than your family name, ${lastName}`
-    )
-  : console.log(
-      `Your first name, ${name} is shorter than your family name, ${lastName}`
-    );
+// name.length > lastName.length
+//   ? console.log(
+//       `Your first name, ${name} is longer than your family name, ${lastName}`
+//     )
+//   : console.log(
+//       `Your first name, ${name} is shorter than your family name, ${lastName}`
+//     );
 
-// todo level2 - 12
+// let myAge =250
+// let yourAge =25
+
+// console.log(`I'm ${myAge-yourAge} years older than your.`);
+
+// let bornYear = 1981; //Number(prompt('Enter birth year'));
+// let now = new Date();
+// let checkAge = Number(now.getFullYear()) - bornYear;
+// checkAge >= 18
+//   ? alert(`You are ${checkAge}. You are old enough to drive`)
+//   : alert(
+//       `You are ${checkAge}. You will be allowed to drive after ${
+//         18 - checkAge
+//       } years.`
+//     );
+
+// let year = prompt('Enter number of years you live:')
+// const seconds = year * (365+0.25) * 24 * 60 * 60
+// alert(`You lived ${seconds} seconds.`)
+let now = new Date();
+console.log(now);
+
+let year = now.getFullYear();
+console.log('year :>> ', year);
+
+let month = String(now.getMonth() + 1);
+month.length < 2 ? (month = '0'.concat(month)) : (month = month);
+console.log('month :>> ', month);
+
+let dayOfMonth = String(now.getDate());
+dayOfMonth.length < 2
+  ? (dayOfMonth = '0'.concat(dayOfMonth))
+  : (dayOfMonth = dayOfMonth);
+console.log('dayOfMonth :>> ', dayOfMonth);
+
+let hours = String(now.getHours());
+hours.length < 2 ? (hours = '0'.concat(hours)) : (hours = hours);
+console.log('hours :>> ', hours);
+
+let minutes = String(now.getMinutes());
+minutes.length < 2 ? (minutes = '0'.concat(minutes)) : (minutes = minutes);
+console.log('minutes :>> ', minutes);
+
+let humanReadableTime = `${year}-${month}-${dayOfMonth} ${hours}:${minutes}`;
+console.log('humanReadableTime :>> ', humanReadableTime);
+
+humanReadableTime = `${dayOfMonth}-${month}-${year} ${hours}:${minutes}`;
+console.log('humanReadableTime :>> ', humanReadableTime);
+
+humanReadableTime = `${dayOfMonth}/${month}/${year} ${hours}:${minutes}`;
+console.log('humanReadableTime :>> ', humanReadableTime);

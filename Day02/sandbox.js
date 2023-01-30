@@ -67,7 +67,7 @@
 // const randNum = Math.random(); // random number between 0 and 0.999999
 // console.log(randNum);
 
-// const num = Math.floor(Math.random() * 100); // random number between 0 and 100
+// const num = Math.floor(Math.random() * 101); // random number between 0 and 100
 // console.log(num);
 
 // // Absolute value
@@ -393,8 +393,139 @@ console.log(numFloat) // 9.81 */
 //* Float to Int
 //? parseInt()
 
-let num = 9.81;
-let numInt = parseInt(num);
-console.log(numInt);
+// let num = 9.81;
+// let numInt = parseInt(num);
+// console.log(numInt);
 
-// Exercises
+//! Exercises
+// 1
+// let challenge = '30 Days Of JavaScript.';
+// //3
+// console.log(challenge.length);
+// //4
+// console.log(challenge.toUpperCase());
+// // 5
+// console.log(challenge.toLowerCase());
+// //6
+// console.log(challenge.substring(0, 2));
+// //7
+// console.log(challenge.substring(3, challenge.length - 1));
+// //8
+// console.log(challenge.includes('Script'));
+// //9
+// console.log(challenge.split(''));
+// //10
+// console.log(challenge.split(' '));
+// // 11
+// console.log(
+//   'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon'.split(',')
+// );
+// //12
+// console.log(challenge.replace('JavaScript', 'Python'));
+// //13
+// console.log(challenge.charAt(15));
+// //14
+// console.log(challenge.charCodeAt('J'));
+// // 15
+// console.log(challenge.indexOf('a'));
+// //16
+// console.log(challenge.lastIndexOf('a'));
+// //17
+// console.log(
+//   'You cannot end a sentence with because because because is a conjunction'.indexOf(
+//     'because'
+//   )
+// );
+// // 18
+// console.log(
+//   'You cannot end a sentence with because because because is a conjunction'.lastIndexOf(
+//     'because'
+//   )
+// );
+// // 19
+// console.log(
+//   'You cannot end a sentence with because because because is a conjunction'.search(
+//     'because'
+//   )
+// );
+// //20
+// console.log(challenge.trim());
+// //21
+// console.log(challenge.startsWith('30'));
+// //22
+// console.log(challenge.endsWith('cript.'));
+// //23
+// console.log(challenge.match(/a/gi));
+// //24
+// console.log('30 Days Of'.concat(' ', 'JavaScript'));
+// //25
+// console.log(challenge.repeat(2));
+
+//! Exercises level 2
+//1
+/* console.log(
+  "The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another."
+);
+//2
+console.log(
+  `"Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead."`
+);
+// 3
+console.log(typeof Number('10') == typeof 10);
+// 4
+console.log(Math.ceil(parseFloat('9.8')) == 10);
+// 5
+console.log('python'.includes('on'));
+console.log('jargon'.includes('on'));
+//6
+console.log('I hope this course is not full of jargon'.includes('jargon'));
+//7
+console.log(Math.floor(Math.random() * 101));
+//8
+console.log(Math.floor(Math.random() * (101 - 50) + 50));
+//9
+console.log(Math.floor(Math.random() * 256));
+//10
+let size = 'JavaScript'.length;
+console.log('JavaScript'[Math.floor(Math.random() * size)]);
+//11
+console.log('1 1 1 1 1\n2 1 2 4 8\n3 1 3 9 27\n4 1 4 16 64\n5 1 5 25 125');
+//12
+let sentence =
+  'You cannot end a sentence with because because because is a conjunction';
+let subSize = 'because because because'.length;
+let position = sentence.indexOf('because')
+console.log(sentence.substr(position, subSize)) */
+
+//!Exercises Level3
+//1
+let sentenceOne =
+  'Love is the best thing in this world. Some found their love and some are \
+  still looking for their love.';
+console.log(sentenceOne.match(/love/gi).length);
+//2
+let sentenceTwo =
+  'You cannot end a sentence with because because because is \
+a conjunction';
+console.log(sentenceTwo.match(/because/gi).length);
+//3
+const sentence =
+  '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re \
+$is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng \
+peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es \
+thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so \
+$the $resu@lt of &love& of tea&ching';
+
+let newSentence = sentence.replace(/[^A-Za-z0-9\s]/gi, '');
+console.log(newSentence);
+
+//4
+const phrase =
+  'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+
+let salaryPerMonth = phrase.substr(phrase.indexOf('5000'), 4) * 12;
+let bonusAnnual = phrase.substr(phrase.indexOf('10000'), 5);
+let coursesPerMonth = phrase.substr(phrase.indexOf('15000'), 5) * 12;
+let total =
+  Number(salaryPerMonth) + Number(bonusAnnual) + Number(coursesPerMonth);
+console.log(total);

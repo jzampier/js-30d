@@ -122,17 +122,97 @@
 // });
 
 // ! break
-for (let i = 0; i <= 5; i++) {
-  if (i == 3) {
-    break;
-  }
-  console.log(i);
-}
+// for (let i = 0; i <= 5; i++) {
+//   if (i == 3) {
+//     break;
+//   }
+//   console.log(i);
+// }
 
 //! continue (skip certain iterations)
-for (let i = 0; i <= 5; i++) {
-  if (i == 3) {
-    continue; //?(skip)
+// for (let i = 0; i <= 5; i++) {
+//   if (i == 3) {
+//     continue; //?(skip)
+//   }
+//   console.log(i);
+// }
+//1
+// for (let i = 0; i <= 10; i++) {
+//   console.log('i :>> ', i);
+// }
+// let i = 0;
+// while (i <= 10) {
+//   console.log('i :>> ', i);
+//   i++;
+// }
+// i = 0;
+// do {
+//   console.log('i :>> ', i);
+//   i++;
+// } while (i <= 10);
+
+//2
+// for (let i = 10; i >= 0; i--) {
+//   console.log('i :>> ', i);
+// }
+// let i = 10;
+// while (i >= 0) {
+//   console.log('i :>> ', i);
+//   i--;
+// }
+// i = 10;
+// do {
+//   console.log('i :>> ', i);
+//   i--;
+// } while (i >= 0);
+
+//3
+// let n = 9;
+// for (let i = 0; i <= n; i++) {
+//   console.log(i);
+// }
+// let text = '#';
+// for (let i = 0; i < 7; i++) {
+//   console.log(text);
+//   text = text.concat('#');
+// }
+
+// for (let i = 0; i <= 10; i++) {
+//   console.log(`${i} x ${i} = ${i * i}`);
+// }
+// console.log('i    i^2   i^3');
+// for (let i = 0; i <= 10; i++) {
+//   if (i <= 3) {
+//     console.log(`${i}    ${i ** 2}     ${i ** 3}`);
+//   } else if (i <= 9) {
+//     console.log(`${i}    ${i ** 2}    ${i ** 3}`);
+//   } else {
+//     console.log(`${i}   ${i ** 2}   ${i ** 3}`);
+//   }
+// }
+
+//7
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 == 0) {
+//     console.log('i :>> ', i);
+//   }
+// }
+
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 != 0) {
+//     console.log('i :>> ', i);
+//   }
+// }
+
+for (let i = 3; i <= 100; i++) {
+  if (i % 2 == 0) {
+  } else {
+    for (let b = 2; b < Math.sqrt(i); b++) {
+      if (i % b == 0) {
+      } else {
+        console.log(i);
+      }
+    }
   }
-  console.log(i);
 }
+console.log('9%3 :>> ', 9 % 3);

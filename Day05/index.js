@@ -239,3 +239,142 @@
 // console.log(`TL ~ fullstack`, fullstack)
 
 //!Exercises
+// 1
+// const arr = new Array();
+// console.log(`TL ~ arr`, arr);
+// const arr2 = [0,1,2,3,4,5,6]
+// console.log(`TL ~ arr2`, arr2)
+// console.log(arr2.length)
+// //4 Get first itemm middle and last
+// let firstItem = arr2[0]
+// console.log(`TL ~ firstItem`, firstItem)
+// let lastItem = arr2[arr2.length-1]
+// console.log(`TL ~ lastItem`, lastItem)
+// let middleIndex = (arr2.length-1)/2
+// console.log(arr2[middleIndex])
+
+//5
+// const mixedDataTypes = [1, false, [0, 1, 2, 3], 'Ola mondo!'];
+// console.log('mixedDataTypes :>> ', mixedDataTypes.length);
+
+// let itCompanies = [
+//   'Facebook',
+//   'Google',
+//   'Microsoft',
+//   'Apple',
+//   'IBM',
+//   'Oracle',
+//   'Amazon',
+// ];
+// console.log(`TL ~ itCompanies`, itCompanies);
+// console.log(itCompanies.length);
+// let firstItem = itCompanies[0];
+// let middleitem = itCompanies[Math.floor((itCompanies.length - 1) / 2)];
+// let lastItem = itCompanies[itCompanies.length - 1];
+// console.log(
+//   `First item : ${firstItem}, Middle item: ${middleitem}, Last Item: ${lastItem}`
+// );
+// //10
+// console.log(itCompanies[0]);
+// console.log(itCompanies[1]);
+// console.log(itCompanies[2]);
+// console.log(itCompanies[3]);
+// console.log(itCompanies[4]);
+// console.log(itCompanies[5]);
+// console.log(itCompanies[6]);
+
+//11
+// itCompanies[0] = itCompanies[0].toUpperCase()
+// console.log(`TL ~ itCompanies[0]`, itCompanies[0])
+// itCompanies[1] = itCompanies[1].toUpperCase()
+// console.log(`TL ~ itCompanies[1]`, itCompanies[1])
+// itCompanies[2] = itCompanies[2].toUpperCase()
+// console.log(`TL ~ itCompanies[2]`, itCompanies[2])
+// itCompanies[3] = itCompanies[3].toUpperCase()
+// console.log(`TL ~ itCompanies[3]`, itCompanies[3])
+// itCompanies[4] = itCompanies[4].toUpperCase()
+// console.log(`TL ~ itCompanies[4]`, itCompanies[4])
+// itCompanies[5] = itCompanies[5].toUpperCase()
+// console.log(`TL ~ itCompanies[5]`, itCompanies[5])
+// itCompanies[6] = itCompanies[6].toUpperCase()
+// console.log(`TL ~ itCompanies[6]`, itCompanies[6])
+// let companiesString = itCompanies.toString();
+// console.log(`TL ~ companiesString`, companiesString);
+// companiesString = companiesString.replace(/,/g,', ');
+// companiesString = companiesString.replace(', Am',' and Am');
+// console.log(`${companiesString} are big IT companies`);
+// let searchCompany = 'Applef'
+// if (itCompanies.indexOf(searchCompany) === -1){
+//   console.log(`${searchCompany} is not in the array itCompanies`);
+// }else{
+//   console.log(`${searchCompany} is in the array itCompanies`);
+// }
+
+// 15
+// itCompanies.sort();
+// console.log('itCompanies :>> ', itCompanies);
+// // 16
+// itCompanies.reverse();
+// console.log(`itCompanies :>> `, itCompanies);
+// //17
+// // let sliced = itCompanies.slice(0,3)
+// // console.log(`TL ~ sliced`, sliced)
+// console.log(
+//   itCompanies[itCompanies.length - 3],
+//   itCompanies[itCompanies.length - 1]
+// );
+// let sliced = itCompanies.slice(itCompanies.length - 3, itCompanies.length);
+// console.log(`TL ~ sliced`, sliced);
+
+// let evenOrOdd;
+// itCompanies.length % 2 == 0 ? (evenOrOdd = 'even') : (evenOrOdd = 'odd');
+// let middleIndex;
+
+// if (evenOrOdd == 'odd') {
+//   middleIndex = Math.floor((itCompanies.length - 1) / 2);
+// } else {
+//   middleIndex = [
+//     Math.floor((itCompanies.length - 1) / 2),
+//     itCompanies.length / 2,
+//   ];
+// }
+// console.log(`TL ~ middleIndex`, middleIndex);
+// console.log(`TL ~ itCompanies`, itCompanies);
+// if (evenOrOdd == 'odd') {
+//   itCompanies.splice(middleIndex, 1);
+//   console.log(`TL ~ itCompanies`, itCompanies);
+// } else {
+//   itCompanies.splice(middleIndex[0], 2);
+//   console.log(`TL ~ itCompanies`, itCompanies);
+// }
+// itCompanies.pop();
+// console.log(`TL ~ itCompanies`, itCompanies);
+// itCompanies.splice(0);
+// console.log(`TL ~ itCompanies`, itCompanies);
+
+//!Level 2
+//2
+// let text =
+//   'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+// console.log(`TL`, text);
+// let newText = text.replace(/[^A-Za-z0-9\s]/gi, '').split(' ');
+// console.log(`TL`, newText);
+// console.log(`TL`, newText.length);
+
+//3
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+if (shoppingCart.includes('Meat') == false) {
+  shoppingCart.unshift('Meat');
+}
+if (shoppingCart.includes('Sugar') == false) {
+  shoppingCart.push('Sugar');
+}
+let allergic = true;
+if (allergic) {
+  shoppingCart.splice(shoppingCart.indexOf('Honey'), 1);
+}
+console.log(shoppingCart);
+
+indexToChange = shoppingCart.indexOf('Tea');
+shoppingCart[indexToChange] = 'Green Tea';
+console.log(`TL ~ shoppingCart`, shoppingCart);

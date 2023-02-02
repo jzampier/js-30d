@@ -204,15 +204,82 @@
 //   }
 // }
 
-for (let i = 3; i <= 100; i++) {
-  if (i % 2 == 0) {
-  } else {
-    for (let b = 2; b < Math.sqrt(i); b++) {
-      if (i % b == 0) {
-      } else {
-        console.log(i);
-      }
-    }
-  }
+// let factors = [];
+// for (let i = 2; i <= 100; i++) {
+//   for (let j = 1; j <= i; j++) {
+//     let div = i / j;
+//     if (Number.isInteger(div) == true) {
+//       factors.push(div);
+//     }
+//   }
+//   if (factors.length <= 2) {
+//     console.log('i :>> ', i);
+//   }
+//   // console.log(i, factors);
+//   factors = [];
+// }
+// let sum = 0;
+// for (let i = 0; i <= 100; i++) {
+//   sum += i;
+// }
+// console.log(`sum = ${sum}`);
+//11
+// let eSum = 0;
+// let oSum = 0;
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 == 0) {
+//     eSum += i;
+//   } else {
+//     oSum += i;
+//   }
+// }
+// console.log(`Sum of evens = ${eSum}, Sum of odds ${oSum}`);
+//12
+// let eSum = 0;
+// let oSum = 0;
+// for (let i = 0; i <= 100; i++) {
+//   if (i % 2 == 0) {
+//     eSum += i;
+//   } else {
+//     oSum += i;
+//   }
+// }
+// const arr = [eSum, oSum];
+// console.log(`Sum of evens = ${eSum}, Sum of odds ${oSum}`);
+// console.log(arr);
+//13
+// let arr = [];
+// for (let i = 0; i < 5; i++) {
+//   arr.push(Math.floor(Math.random() * 1000));
+// }
+// console.log('arr :>> ', arr);
+// let arr = [];
+// for (let i = 0; i < 5; i++) {
+//   let numberToPush = Math.floor(Math.random() * 100000);
+//   if (arr.includes(numberToPush)) {
+//     continue;
+//   } else {
+//     arr.push(numberToPush);
+//   }
+// }
+// console.log('arr :>> ', arr);
+
+// 15 id with 6 chars
+// let numberOfChars = 30;
+// let result = '';
+// let charSet =
+//   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&';
+// let charSetIndex = charSet.length;
+// while (result.length < numberOfChars) {
+//   result += charSet.charAt(Math.floor(Math.random() * charSetIndex));
+// }
+// console.log(result);
+let numberOfChars = 7;
+let result = '#';
+let chars = '0123456789abcdef';
+while (result.length < numberOfChars) {
+  result += chars.charAt(Math.floor(Math.random() * chars.length));
 }
-console.log('9%3 :>> ', 9 % 3);
+console.log(result);
+
+// todo Level 2 exercise 3

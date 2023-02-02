@@ -274,12 +274,30 @@
 //   result += charSet.charAt(Math.floor(Math.random() * charSetIndex));
 // }
 // console.log(result);
-let numberOfChars = 7;
-let result = '#';
-let chars = '0123456789abcdef';
-while (result.length < numberOfChars) {
-  result += chars.charAt(Math.floor(Math.random() * chars.length));
-}
-console.log(result);
+// let numberOfChars = 7;
+// let result = '#';
+// let chars = '0123456789abcdef';
+// while (result.length < numberOfChars) {
+//   result += chars.charAt(Math.floor(Math.random() * chars.length));
+// }
+// console.log(result);
 
-// todo Level 2 exercise 3
+// Level 2 exercise 3
+// let rColor = Math.floor(Math.random() * 255);
+// let gColor = Math.floor(Math.random() * 255);
+// let bColor = Math.floor(Math.random() * 255);
+// console.log(`rgb(${rColor},${gColor},${bColor})`);
+const countries = [
+  'Albania',
+  'Bolivia',
+  'Canada',
+  'Denmark',
+  'Ethiopia',
+  'Finland',
+  'Germany',
+  'Hungary',
+  'Ireland',
+  'Japan',
+  'Kenya',
+];
+const cToUpp = [];

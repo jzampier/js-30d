@@ -1,3 +1,4 @@
+import { countries } from './countries.js';
 /*
 * For loop structure
 
@@ -287,17 +288,207 @@
 // let gColor = Math.floor(Math.random() * 255);
 // let bColor = Math.floor(Math.random() * 255);
 // console.log(`rgb(${rColor},${gColor},${bColor})`);
-const countries = [
-  'Albania',
-  'Bolivia',
-  'Canada',
-  'Denmark',
-  'Ethiopia',
-  'Finland',
-  'Germany',
-  'Hungary',
-  'Ireland',
-  'Japan',
-  'Kenya',
+// const countries = [
+//   'Albania',
+//   'Bolivia',
+//   'Canada',
+//   'Denmark',
+//   'Ethiopia',
+//   'Finland',
+//   'Germany',
+//   'Hungary',
+//   'Ireland',
+//   'Japan',
+//   'Kenya',
+// ];
+// const webTechs = [
+//   'HTML',
+//   'CSS',
+//   'JavaScript',
+//   'React',
+//   'Redux',
+//   'Node',
+//   'MongoDB',
+// ];
+// const cToUpp = [];
+// for (const country of countries) {
+//   cToUpp.push(country.toUpperCase());
+// }
+// console.log('cToUpp :>> ', cToUpp);
+
+// const arrLength = [];
+// for (const country of cToUpp) {
+//   arrLength.push(country.length);
+// }
+// console.log(`TL ~ arrLength`, arrLength);
+// const newArr = [];
+// let innerArr = [];
+// let s = 'Albania';
+// let slice = s.slice(0, 3).toUpperCase();
+// console.log(`TL ~ slice`, slice);
+// for (const country of countries) {
+//   innerArr.push(country, country.slice(0, 3).toUpperCase(), country.length);
+//   newArr.push(innerArr);
+//   innerArr = [];
+// }
+// console.log(newArr);
+// const newArr = [];
+// const newArr2 = [];
+// for (const country of countries) {
+//   if (country.includes('land')) {
+//     newArr.push(country);
+//   } else {
+//     newArr2.push(country);
+//   }
+// }
+// newArr.length > 0 ? console.log(newArr) : console.log(newArr2);
+// const newArr = [];
+// const newArr2 = [];
+// for (const country of countries) {
+//   if (country.at(-2) == 'i' && country.at(-1) == 'a') {
+//     newArr.push(country);
+//   } else {
+//     newArr2.push(country);
+//   }
+// }
+// newArr.length > 0 ? console.log(newArr) : console.log(newArr2);
+// let lengthArr = [];
+// for (const country of countries) {
+//   lengthArr.push(Number(country.length));
+// }
+// let max = Math.max(...lengthArr);
+// for (const country of countries) {
+//   if (country.length == max) {
+//     console.log(country);
+//   }
+// }
+// const lengthArray = [];
+// for (const country of countries) {
+//   if (country.length == 5) {
+//     lengthArray.push(country);
+//   }
+// }
+// console.log(`TL ~ lengthArray`, lengthArray);
+// const mainArr = [];
+// let innerArr = [];
+// for (const tech of webTechs) {
+//   innerArr.push(tech, tech.length);
+//   mainArr.push(innerArr);
+//   innerArr = [];
+// }
+// console.log(`TL ~ mainArr`, mainArr);
+// const mernStack = ['MongoDB', 'Express', 'React', 'Node'];
+// //13
+// let mern = '';
+// for (const tech of mernStack) {
+//   mern += tech[0].toUpperCase();
+// }
+// console.log(`TL ~ mern`, mern);
+
+// //14
+// for (const tech of webTechs) {
+//   console.log(tech);
+// }
+// //15
+// let fruitArray = ['banana', 'orange', 'mango', 'lemon'];
+// const newArr = [];
+// for (let i = fruitArray.length - 1; i >= 0; i--) {
+//   newArr.push(fruitArray[i]);
+// }
+// console.log(newArr);
+// //16
+// const fullStack = [
+//   ['HTML', 'CSS', 'JS', 'React'],
+//   ['Node', 'Express', 'MongoDB'],
+// ];
+// for (const arr of fullStack) {
+//   for (const item of arr) {
+//     console.log(item);
+//   }
+// }
+//!Exercises lv3
+
+const webTechs = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React',
+  'Redux',
+  'Node',
+  'MongoDB',
 ];
-const cToUpp = [];
+const mernStack = ['MongoDB', 'Express', 'React', 'Node'];
+
+// //1 Copy countries array(Avoid mutation)
+// const newCountries = countries.slice(0);
+// console.log(`TL ~ countries`, countries);
+// console.log(`TL ~ newCountries`, newCountries);
+
+// //2
+// let sortedCountries = countries.slice(0).sort();
+// console.log(`TL ~ sortedCountries`, sortedCountries);
+
+// //3
+// let sortedWebTechs = webTechs.sort();
+// console.log(`TL ~ sortedWebTechs`, sortedWebTechs);
+// let sortedMernStack = mernStack.sort();
+// console.log(`TL ~ mernStack`, sortedMernStack);
+
+//4 Extract all the countries contain the word 'land' from the countries
+//  array and print it as array
+// const newCountries = [];
+// for (const country of countries) {
+//   if (country.includes('land')) {
+//     newCountries.push(country);
+//   }
+// }
+// console.log(`TL ~ newCountries`, newCountries);
+
+//5 Find the country containing the hightest number of characters in the
+//  countries array
+// const lengths = [];
+// for (const country of countries) {
+//   lengths.push(country.length);
+// }
+// const max = Math.max(...lengths);
+// console.log(`TL ~ max`, max);
+// for (const country of countries) {
+//   if (country.length == max) {
+//     console.log(country);
+//   }
+// }
+
+// //6
+// const countriesWland = [];
+// for (const country of countries) {
+//   if (country.includes('land')) {
+//     countriesWland.push(country);
+//   }
+// }
+// console.log(`TL ~ countriesWland`, countriesWland);
+
+// //7
+// const countriesWfourChars = [];
+// for (const country of countries) {
+//   if (country.length == 4) {
+//     countriesWfourChars.push(country);
+//   }
+// }
+// console.log(`TL ~ countriesWfourChars`, countriesWfourChars);
+
+//8 countries containing two or more words
+// const countTwoMoreWords = [];
+// for (const country of countries) {
+//   if (country.includes(' ')) {
+//     countTwoMoreWords.push(country);
+//   }
+// }
+// console.log(countTwoMoreWords);
+
+//9
+const reversed = countries.reverse();
+const revertalized = [];
+for (const country of reversed) {
+  revertalized.push(country.toUpperCase());
+}
+console.log(`TL ~ revertalized`, revertalized);

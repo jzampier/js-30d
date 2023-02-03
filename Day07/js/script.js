@@ -145,3 +145,129 @@
 // console.log(weightOfObj(500));
 //todo Day07 EXERCISES
 //1
+// function fullName() {
+//   let fName = 'Julio';
+//   let lName = 'Zampier';
+//   let space = ' ';
+//   return fName + space + lName;
+// }
+// console.log(fullName())
+
+//2
+// function fullName(fName, lName){
+//   return `${fName} ${lName}`
+// }
+// console.log(fullName('Julio','Zampier'))
+
+//3
+// function addNumbers(a,b){
+//   return a+b
+// }
+// console.log(addNumbers(10,25));
+
+//4
+// function areaOfRectangle(l, w) {
+//   return l * w + ' m2';
+// }
+// console.log(areaOfRectangle(5, 3));
+
+//5
+function perimeterOfRectangle(l, w) {
+  return 2 * (l + w) + ' m';
+}
+console.log(perimeterOfRectangle(5, 3));
+
+//6
+function volumeOfRectPrism(length, width, height) {
+  return length * width * height + ' m3';
+}
+console.log(`TL ~ volumeOfRectPrism`, volumeOfRectPrism(5, 3, 6));
+
+//7
+function areaOfCircle(radius) {
+  return Math.PI.toFixed(2) * radius ** 2 + ' m2';
+}
+console.log(areaOfCircle(10));
+
+//8
+function circumOfCircle(radius) {
+  return (Math.PI * 2 * radius).toFixed(2) + ' m';
+}
+console.log(circumOfCircle(10));
+
+//9
+function density(mass, volume) {
+  return (mass / volume).toFixed(1) + ' g/cm3';
+}
+console.log(density(100, 16));
+
+//10
+function speed(distance, time) {
+  let speed = (distance / time).toFixed(2) + ' m/s';
+  return speed;
+}
+console.log(speed(100, 12));
+
+//11
+function weight(mass, gravity = 9.81) {
+  let weight = mass * gravity + ' N';
+  return weight;
+}
+console.log(weight(1000));
+
+//12
+function convertCelsiusToFahrenheit(tempInCelsius) {
+  let cToF = tempInCelsius * (9 / 5) + 32 + ' F';
+  return cToF;
+}
+console.log(convertCelsiusToFahrenheit(43));
+
+//13
+function bodyMassIndex(weight, height) {
+  let bmi = (weight / height ** 2).toFixed(1);
+  switch (true) {
+    case bmi >= 30:
+      return `BMI = ${bmi} kg/m2 , Obese`;
+    case bmi >= 25:
+      return `BMI = ${bmi} kg/m2 , Overweight`;
+    case bmi >= 18.5:
+      return `BMI = ${bmi} kg/m2 , Normal Weight`;
+    default:
+      return `BMI = ${bmi} kg/m2 , Underweight`;
+  }
+}
+console.log(bodyMassIndex(88, 1.72));
+
+//14
+function checkSeason(month) {
+  console.log(month.toLowerCase());
+  switch (true) {
+    case ['december', 'january', 'february'].includes(month.toLowerCase()):
+      return 'Winter';
+    case ['march', 'april', 'may'].includes(month.toLowerCase()):
+      return 'Spring';
+    case ['june', 'july', 'august'].includes(month.toLowerCase()):
+      return 'Summer';
+    case ['september', 'october', 'november'].includes(month.toLowerCase()):
+      return 'Autumn';
+    default:
+      return 'Type a correctly month name';
+  }
+}
+console.log(checkSeason('August'));
+
+//15
+function findMax(a, b, c) {
+  let max = a;
+  if (max < b) {
+    max = b;
+  }
+  if (max < c) {
+    max = c;
+  }
+  return max;
+}
+console.log(findMax(1000, 20000, -100000000));
+
+//todo Exercises Level2
+//1

@@ -172,102 +172,126 @@
 // console.log(areaOfRectangle(5, 3));
 
 //5
-function perimeterOfRectangle(l, w) {
-  return 2 * (l + w) + ' m';
-}
-console.log(perimeterOfRectangle(5, 3));
+// function perimeterOfRectangle(l, w) {
+//   return 2 * (l + w) + ' m';
+// }
+// console.log(perimeterOfRectangle(5, 3));
 
-//6
-function volumeOfRectPrism(length, width, height) {
-  return length * width * height + ' m3';
-}
-console.log(`TL ~ volumeOfRectPrism`, volumeOfRectPrism(5, 3, 6));
+// //6
+// function volumeOfRectPrism(length, width, height) {
+//   return length * width * height + ' m3';
+// }
+// console.log(`TL ~ volumeOfRectPrism`, volumeOfRectPrism(5, 3, 6));
 
-//7
-function areaOfCircle(radius) {
-  return Math.PI.toFixed(2) * radius ** 2 + ' m2';
-}
-console.log(areaOfCircle(10));
+// //7
+// function areaOfCircle(radius) {
+//   return Math.PI.toFixed(2) * radius ** 2 + ' m2';
+// }
+// console.log(areaOfCircle(10));
 
-//8
-function circumOfCircle(radius) {
-  return (Math.PI * 2 * radius).toFixed(2) + ' m';
-}
-console.log(circumOfCircle(10));
+// //8
+// function circumOfCircle(radius) {
+//   return (Math.PI * 2 * radius).toFixed(2) + ' m';
+// }
+// console.log(circumOfCircle(10));
 
-//9
-function density(mass, volume) {
-  return (mass / volume).toFixed(1) + ' g/cm3';
-}
-console.log(density(100, 16));
+// //9
+// function density(mass, volume) {
+//   return (mass / volume).toFixed(1) + ' g/cm3';
+// }
+// console.log(density(100, 16));
 
-//10
-function speed(distance, time) {
-  let speed = (distance / time).toFixed(2) + ' m/s';
-  return speed;
-}
-console.log(speed(100, 12));
+// //10
+// function speed(distance, time) {
+//   let speed = (distance / time).toFixed(2) + ' m/s';
+//   return speed;
+// }
+// console.log(speed(100, 12));
 
-//11
-function weight(mass, gravity = 9.81) {
-  let weight = mass * gravity + ' N';
-  return weight;
-}
-console.log(weight(1000));
+// //11
+// function weight(mass, gravity = 9.81) {
+//   let weight = mass * gravity + ' N';
+//   return weight;
+// }
+// console.log(weight(1000));
 
-//12
-function convertCelsiusToFahrenheit(tempInCelsius) {
-  let cToF = tempInCelsius * (9 / 5) + 32 + ' F';
-  return cToF;
-}
-console.log(convertCelsiusToFahrenheit(43));
+// //12
+// function convertCelsiusToFahrenheit(tempInCelsius) {
+//   let cToF = tempInCelsius * (9 / 5) + 32 + ' F';
+//   return cToF;
+// }
+// console.log(convertCelsiusToFahrenheit(43));
 
-//13
-function bodyMassIndex(weight, height) {
-  let bmi = (weight / height ** 2).toFixed(1);
-  switch (true) {
-    case bmi >= 30:
-      return `BMI = ${bmi} kg/m2 , Obese`;
-    case bmi >= 25:
-      return `BMI = ${bmi} kg/m2 , Overweight`;
-    case bmi >= 18.5:
-      return `BMI = ${bmi} kg/m2 , Normal Weight`;
-    default:
-      return `BMI = ${bmi} kg/m2 , Underweight`;
-  }
-}
-console.log(bodyMassIndex(88, 1.72));
+// //13
+// function bodyMassIndex(weight, height) {
+//   let bmi = (weight / height ** 2).toFixed(1);
+//   switch (true) {
+//     case bmi >= 30:
+//       return `BMI = ${bmi} kg/m2 , Obese`;
+//     case bmi >= 25:
+//       return `BMI = ${bmi} kg/m2 , Overweight`;
+//     case bmi >= 18.5:
+//       return `BMI = ${bmi} kg/m2 , Normal Weight`;
+//     default:
+//       return `BMI = ${bmi} kg/m2 , Underweight`;
+//   }
+// }
+// console.log(bodyMassIndex(88, 1.72));
 
-//14
-function checkSeason(month) {
-  console.log(month.toLowerCase());
-  switch (true) {
-    case ['december', 'january', 'february'].includes(month.toLowerCase()):
-      return 'Winter';
-    case ['march', 'april', 'may'].includes(month.toLowerCase()):
-      return 'Spring';
-    case ['june', 'july', 'august'].includes(month.toLowerCase()):
-      return 'Summer';
-    case ['september', 'october', 'november'].includes(month.toLowerCase()):
-      return 'Autumn';
-    default:
-      return 'Type a correctly month name';
-  }
-}
-console.log(checkSeason('August'));
+// //14
+// function checkSeason(month) {
+//   console.log(month.toLowerCase());
+//   switch (true) {
+//     case ['december', 'january', 'february'].includes(month.toLowerCase()):
+//       return 'Winter';
+//     case ['march', 'april', 'may'].includes(month.toLowerCase()):
+//       return 'Spring';
+//     case ['june', 'july', 'august'].includes(month.toLowerCase()):
+//       return 'Summer';
+//     case ['september', 'october', 'november'].includes(month.toLowerCase()):
+//       return 'Autumn';
+//     default:
+//       return 'Type a correctly month name';
+//   }
+// }
+// console.log(checkSeason('August'));
 
-//15
-function findMax(a, b, c) {
-  let max = a;
-  if (max < b) {
-    max = b;
-  }
-  if (max < c) {
-    max = c;
-  }
-  return max;
-}
-console.log(findMax(1000, 20000, -100000000));
+// //15
+// function findMax(a, b, c) {
+//   let max = a;
+//   if (max < b) {
+//     max = b;
+//   }
+//   if (max < c) {
+//     max = c;
+//   }
+//   return max;
+// }
+// console.log(findMax(1000, 20000, -100000000));
 
 //todo Exercises Level2
 //1
+function solveLinEquation(a, b, c) {
+  let y = `${-a / b}x + ${-c / b}`;
+  return y;
+}
+console.log(solveLinEquation(3, -4, 5));
+
+//2 ax2 + bx + c = 0
+function solveQuadEquation(a = 0, b = 0, c = 0) {
+  console.log(`(${a})x2 + (${b})x + (${c}) = 0`);
+  if (a == 0 && b == 0 && c == 0) {
+    return `{0}`;
+  }
+  let delta = b ** 2 - 4 * (a * c);
+  let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+  let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+  if (delta != 0) {
+    return `{${x1}, ${x2}}`;
+  } else {
+    return `{${x1}}`;
+  }
+}
+console.log(solveQuadEquation(1, 7, 12));
+
+//3

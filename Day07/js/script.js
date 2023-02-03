@@ -270,28 +270,73 @@
 // console.log(findMax(1000, 20000, -100000000));
 
 //todo Exercises Level2
-//1
-function solveLinEquation(a, b, c) {
-  let y = `${-a / b}x + ${-c / b}`;
-  return y;
-}
-console.log(solveLinEquation(3, -4, 5));
+// //1
+// function solveLinEquation(a, b, c) {
+//   let y = `${-a / b}x + ${-c / b}`;
+//   return y;
+// }
+// console.log(solveLinEquation(3, -4, 5));
 
-//2 ax2 + bx + c = 0
-function solveQuadEquation(a = 0, b = 0, c = 0) {
-  console.log(`(${a})x2 + (${b})x + (${c}) = 0`);
-  if (a == 0 && b == 0 && c == 0) {
-    return `{0}`;
-  }
-  let delta = b ** 2 - 4 * (a * c);
-  let x1 = (-b + Math.sqrt(delta)) / (2 * a);
-  let x2 = (-b - Math.sqrt(delta)) / (2 * a);
-  if (delta != 0) {
-    return `{${x1}, ${x2}}`;
-  } else {
-    return `{${x1}}`;
-  }
-}
-console.log(solveQuadEquation(1, 7, 12));
+// //2 ax2 + bx + c = 0
+// function solveQuadEquation(a = 0, b = 0, c = 0) {
+//   console.log(`(${a})x2 + (${b})x + (${c}) = 0`);
+//   if (a == 0 && b == 0 && c == 0) {
+//     return `{0}`;
+//   }
+//   let delta = b ** 2 - 4 * (a * c);
+//   let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+//   let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+//   if (delta != 0) {
+//     return `{${x1}, ${x2}}`;
+//   } else {
+//     return `{${x1}}`;
+//   }
+// }
+// console.log(solveQuadEquation(1, 7, 12));
 
-//3
+// //3
+// function printArray(arr) {
+//   for (const element of arr) {
+//     console.log(element);
+//   }
+// }
+// const arrayTest = [100, 20, 30, 42, 21, 59];
+// printArray(arrayTest);
+
+// //4
+// function showDateTime() {
+//   let now = new Date();
+//   let month = String(now.getMonth() + 1);
+//   let date = String(now.getDate());
+//   let year = String(now.getFullYear());
+//   let hour = String(now.getHours());
+//   let minutes = String(now.getMinutes());
+//   month.length == 1 ? (month = `0${month}`) : (month = month);
+//   date.length == 1 ? (date = `0${date}`) : (date = date);
+//   hour.length == 1 ? (hour = `0${hour}`) : (hour = hour);
+//   minutes.length == 1 ? (minutes = `0${minutes}`) : (minutes = minutes);
+//   console.log(`${month}/${date}/${year} ${hour}:${minutes}`);
+// }
+// showDateTime();
+
+// //5
+// function swapValues(a, b) {
+//   let swap = a;
+//   a = b;
+//   b = swap;
+//   return `a => ${a}, b => ${b}`;
+// }
+// console.log(swapValues(3,4))
+
+//6
+function reverseArray(arr) {
+  const reversed = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+  return reversed;
+}
+const arrTest = ['A', 'B', 'C'];
+console.log(reverseArray(arrTest));
+
+//7

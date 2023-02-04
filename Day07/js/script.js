@@ -383,60 +383,60 @@
 // console.log(sumOfNumbers(-10))
 
 //11
-function sumOfOdds(number) {
-  let sum = 0;
-  if (number > 0) {
-    for (let i = 0; i <= number; i++) {
-      if (i % 2 != 0) {
-        sum += i;
-      }
-    }
-  } else {
-    for (let i = number; i <= 0; i++) {
-      if (i % 2 != 0) {
-        sum += i;
-      }
-    }
-  }
-  return `Sum of all odd numbers between 0 and ${number} = ${sum}`;
-}
-console.log(sumOfOdds(100));
+// function sumOfOdds(number) {
+//   let sum = 0;
+//   if (number > 0) {
+//     for (let i = 0; i <= number; i++) {
+//       if (i % 2 != 0) {
+//         sum += i;
+//       }
+//     }
+//   } else {
+//     for (let i = number; i <= 0; i++) {
+//       if (i % 2 != 0) {
+//         sum += i;
+//       }
+//     }
+//   }
+//   return `Sum of all odd numbers between 0 and ${number} = ${sum}`;
+// }
+// console.log(sumOfOdds(100));
 
-//12
-const sumOfEven = (number) => {
-  let sum = 0;
-  if (number > 0) {
-    for (let i = 0; i <= number; i++) {
-      if (i % 2 == 0) {
-        sum += i;
-      }
-    }
-  } else {
-    for (let i = number; i <= 0; i++) {
-      if (i % 2 == 0) {
-        sum += i;
-      }
-    }
-  }
-  return `Sum of all even numbers between 0 and ${number} = ${sum}`;
-};
-console.log(sumOfEven(-15));
+// //12
+// const sumOfEven = (number) => {
+//   let sum = 0;
+//   if (number > 0) {
+//     for (let i = 0; i <= number; i++) {
+//       if (i % 2 == 0) {
+//         sum += i;
+//       }
+//     }
+//   } else {
+//     for (let i = number; i <= 0; i++) {
+//       if (i % 2 == 0) {
+//         sum += i;
+//       }
+//     }
+//   }
+//   return `Sum of all even numbers between 0 and ${number} = ${sum}`;
+// };
+// console.log(sumOfEven(-15));
 
-//13
-const evensAndOdds = (posNumber) => {
-  let odds = 0;
-  let evens = 0;
-  for (let i = 0; i <= posNumber; i++) {
-    if (i % 2 != 0) {
-      odds++;
-    } else {
-      evens++;
-    }
-  }
-  console.log(`The number of odds are ${odds}`);
-  console.log(`The number of evens are ${evens}`);
-};
-evensAndOdds(100);
+// //13
+// const evensAndOdds = (posNumber) => {
+//   let odds = 0;
+//   let evens = 0;
+//   for (let i = 0; i <= posNumber; i++) {
+//     if (i % 2 != 0) {
+//       odds++;
+//     } else {
+//       evens++;
+//     }
+//   }
+//   console.log(`The number of odds are ${odds}`);
+//   console.log(`The number of evens are ${evens}`);
+// };
+// evensAndOdds(100);
 
 //14
 // const sumOfArgs = (...args) =>{
@@ -505,3 +505,95 @@ evensAndOdds(100);
 
 //todo Exercises Lvl 3
 //1
+// function userIdGeneratedByUser() {
+//   let numChars = Number(prompt('Number of characters: '));
+//   let numIds = Number(prompt(`Number of ID's: `));
+//   let charsDict =
+//     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//   let result = '';
+//   for (let j = 0; j < numIds; j++) {
+//     let id = '';
+//     for (let i = 0; i < numChars; i++) {
+//       id += charsDict[Math.floor(Math.random() * 62)];
+//     }
+//     result = result.concat(id, '\n');
+//   }
+//   console.log(result);
+// }
+// userIdGeneratedByUser();
+
+//2
+// const rgbColorGenerator = () => {
+//   let r = Math.floor(Math.random() * 256);
+//   let g = Math.floor(Math.random() * 256);
+//   let b = Math.floor(Math.random() * 256);
+//   console.log(`rgb(${r},${g},${b})`);
+// };
+// rgbColorGenerator();
+
+//3
+// const arrayOfHexaColors = (n) => {
+//   let hexdict = '0123456789abcdef';
+//   const arrayOfColors = [];
+//   for (let j = 0; j < n; j++) {
+//     let hexColor = '#';
+//     for (let i = 0; i < 6; i++) {
+//       hexColor += hexdict[Math.floor(Math.random() * 16)];
+//     }
+//     arrayOfColors.push(hexColor);
+//     hexColor = '#';
+//   }
+//   return arrayOfColors;
+// };
+// console.log(arrayOfHexaColors(5));
+
+//4
+// const arrayOfRgbColors = (n) => {
+//   const arrayOfRgbColors = [];
+//   let r = Math.floor(Math.random() * 256);
+//   let g = Math.floor(Math.random() * 256);
+//   let b = Math.floor(Math.random() * 256);
+//   for (let i = 0; i < n; i++) {
+//     arrayOfRgbColors.push(`rgb(${r},${g},${b})`);
+//   }
+//   return arrayOfRgbColors;
+// };
+// console.log(arrayOfRgbColors(5));
+
+//5
+// const convertHexaToRgb = (hexaColor) => {
+//   const hexaDict = '0123456789abcdef';
+//   //eliminate #
+//   let rgbcolor = hexaColor.slice(1);
+//   const arrgbcolor = [];
+//   const newArr = [];
+//   //find the correspondent decimal value for each hexa character stored in rgbcolor
+//   for (let i = 0; i < rgbcolor.length; i++) {
+//     arrgbcolor.push(hexaDict.indexOf(rgbcolor[i]));
+//   }
+//   //apply the multiply factor (16) for each even index(start on 0) 'a'f 'd'1 '7'3
+//   for (let i = 0; i < arrgbcolor.length; i++) {
+//     if (i % 2 == 0) {
+//       newArr.push(arrgbcolor[i] * 16);
+//     } else {
+//       newArr.push(arrgbcolor[i]);
+//     }
+//   }
+//   let r = newArr[0] + newArr[1];
+//   let g = newArr[2] + newArr[3];
+//   let b = newArr[4] + newArr[5];
+//   return `rgb(${r},${g},${b})`;
+// };
+// console.log(convertHexaToRgb('#10cad0'));
+
+const hex2rgb = (hex) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+
+  // return {r, g, b}
+  return { r, g, b };
+};
+console.log(hex2rgb('#10cad0'));
+
+//todo 06

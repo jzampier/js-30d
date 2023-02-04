@@ -586,14 +586,29 @@
 // };
 // console.log(convertHexaToRgb('#10cad0'));
 
-const hex2rgb = (hex) => {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
+// const hex2rgb = (hex) => {
+//   const r = parseInt(hex.slice(1, 3), 16);
+//   const g = parseInt(hex.slice(3, 5), 16);
+//   const b = parseInt(hex.slice(5, 7), 16);
 
-  // return {r, g, b}
-  return { r, g, b };
-};
-console.log(hex2rgb('#10cad0'));
+//   // return {r, g, b}
+//   return { r, g, b };
+// };
+// console.log(hex2rgb('#10cad0'));
 
 //todo 06
+const convertRgbToHexa = (rgbColor) => {
+  const rgb2number = [];
+  for (const element of rgbColor.split(',')) {
+    let pusher = Number(element).toString(16);
+    if (pusher.length == 1) {
+      rgb2number.push('0' + pusher);
+    } else {
+      rgb2number.push(pusher);
+    }
+  }
+  let hexColor = `#${rgb2number[0]}${rgb2number[1]}${rgb2number[2]}`;
+  return hexColor;
+};
+
+console.log(convertRgbToHexa('250,30,90'));

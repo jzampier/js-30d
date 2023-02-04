@@ -329,14 +329,179 @@
 // console.log(swapValues(3,4))
 
 //6
-function reverseArray(arr) {
-  const reversed = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    reversed.push(arr[i]);
-  }
-  return reversed;
-}
-const arrTest = ['A', 'B', 'C'];
-console.log(reverseArray(arrTest));
+// function reverseArray(arr) {
+//   const reversed = [];
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     reversed.push(arr[i]);
+//   }
+//   return reversed;
+// }
+// const arrTest = ['A', 'B', 'C'];
+// console.log(reverseArray(arrTest));
 
-//7
+// //7
+// function capitalizeArray(arr) {
+//   const capitalizedarray = [];
+//   for (const element of arr) {
+//     capitalizedarray.push(element.toUpperCase());
+//   }
+//   return capitalizedarray;
+// }
+// console.log(capitalizeArray(['Rodolpho', 'Marcelo', 'Jao']));
+
+// //8
+// function addItem(item) {
+//   const arrayOfItems = [];
+//   arrayOfItems.push(item);
+//   return arrayOfItems;
+// }
+// console.log(addItem('feijao'));
+
+// //9
+// const arrayOfItems = ['item1', 'item2', 'item3', 'item4', 'item5'];
+// function removeItem(index, array) {
+//   array.splice(index, 1);
+//   return array;
+// }
+// console.log(removeItem(2, arrayOfItems));
+
+// //10
+// function sumOfNumbers(number) {
+//   let sum = 0;
+//   if (number > 0) {
+//     for (let i = 0; i <= number; i++) {
+//       sum += i;
+//     }
+//     return `sum of numbers between 0 and ${number} = ${sum}`;
+//   } else {
+//     for (let i = number; i <= 0; i++) {
+//       sum += i;
+//     }
+//     return `sum of numbers between ${number} and 0 = ${sum}`;
+//   }
+// }
+// console.log(sumOfNumbers(-10))
+
+//11
+function sumOfOdds(number) {
+  let sum = 0;
+  if (number > 0) {
+    for (let i = 0; i <= number; i++) {
+      if (i % 2 != 0) {
+        sum += i;
+      }
+    }
+  } else {
+    for (let i = number; i <= 0; i++) {
+      if (i % 2 != 0) {
+        sum += i;
+      }
+    }
+  }
+  return `Sum of all odd numbers between 0 and ${number} = ${sum}`;
+}
+console.log(sumOfOdds(100));
+
+//12
+const sumOfEven = (number) => {
+  let sum = 0;
+  if (number > 0) {
+    for (let i = 0; i <= number; i++) {
+      if (i % 2 == 0) {
+        sum += i;
+      }
+    }
+  } else {
+    for (let i = number; i <= 0; i++) {
+      if (i % 2 == 0) {
+        sum += i;
+      }
+    }
+  }
+  return `Sum of all even numbers between 0 and ${number} = ${sum}`;
+};
+console.log(sumOfEven(-15));
+
+//13
+const evensAndOdds = (posNumber) => {
+  let odds = 0;
+  let evens = 0;
+  for (let i = 0; i <= posNumber; i++) {
+    if (i % 2 != 0) {
+      odds++;
+    } else {
+      evens++;
+    }
+  }
+  console.log(`The number of odds are ${odds}`);
+  console.log(`The number of evens are ${evens}`);
+};
+evensAndOdds(100);
+
+//14
+// const sumOfArgs = (...args) =>{
+//   let sum = 0
+//   for (const number of args) {
+//     sum += number
+//   }
+//   return sum
+// }
+// function sumOfArgs() {
+//   let sum = 0;
+//   for (const number of arguments) {
+//     sum += number;
+//   }
+//   return sum;
+// }
+// console.log(sumOfArgs(1, 2, 3, 4, 5));
+
+//15
+// function randomUserIp() {
+//   let r1 = Math.floor(Math.random() * 224);
+//   let r2 = Math.floor(Math.random() * 256);
+//   let r3 = Math.floor(Math.random() * 256);
+//   let r4 = Math.floor(Math.random() * 256);
+//   return `IP: ${r1}.${r2}.${r3}.${r4}`;
+// }
+// console.log(randomUserIp());
+
+//16
+// function randomMacAddress() {
+//   let hexa = '0123456789ABCDEF';
+//   let randomHexa = '';
+//   for (let i = 0; i < 6; i++) {
+//     randomHexa += hexa[Math.floor(Math.random() * 16)];
+//     randomHexa += hexa[Math.floor(Math.random() * 16)];
+//     randomHexa += '-';
+//   }
+//   console.log(randomHexa.length);
+//   return randomHexa.slice(0, 17);
+// }
+// console.log(randomMacAddress());
+// Math.floor(Math.random() * (max - min + 1)) + min;
+
+//17
+// function randomHexaDecimalNumberGenerator() {
+//   let hexDict = '0123456789abcdef';
+//   let hexString = '#';
+//   for (let i = 0; i < 6; i++) {
+//     hexString += hexDict[Math.floor(Math.random() * 16)];
+//   }
+//   return hexString;
+// }
+// console.log(randomHexaDecimalNumberGenerator());
+
+//18
+// function userIdGenerator() {
+//   let charsDict =
+//     '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//   let id = '';
+//   for (let i = 0; i < 7; i++) {
+//     id += charsDict[Math.floor(Math.random() * 62)];
+//   }
+//   return id;
+// }
+// console.log(userIdGenerator());
+
+//todo Exercises Lvl 3
+//1

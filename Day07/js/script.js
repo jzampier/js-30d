@@ -736,3 +736,96 @@
 // console.log(average([5, 5, 5, 1, 3, 4, 5, 6, 1111, 'a']));
 
 //14
+// const modifyArray = (arr) => {
+//   if (arr.length < 5) {
+//     return 'Item not found';
+//   } else {
+//     arr[4] = arr[4].toUpperCase();
+//     return arr;
+//   }
+// };
+// console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']));
+
+//15
+// const isPrime = (num) => {
+//   const factorsOfnum = [];
+//   for (let i = 1; i <= num; i++) {
+//     if (num % i == 0) {
+//       factorsOfnum.push(i);
+//     }
+//   }
+//   if (factorsOfnum.length == 2) {
+//     return `${num} is a prime number`;
+//   } else {
+//     return `${num} is not a prime number`;
+//   }
+// };
+// console.log(isPrime(6));
+//15.b
+// const isPrime = (num) => {
+//   if (num === 1) {
+//     return `${num} is not a prime number`;
+//   } else if (num === 2) {
+//     return `${num} is a prime number`;
+//   } else {
+//     for (let i = 2; i < num; i++) {
+//       if (num % i == 0) {
+//         return `${num} is not a prime number`;
+//       } else {
+//         return `${num} is a prime number`;
+//       }
+//     }
+//   }
+// };
+// console.log(isPrime(101));
+
+//16
+// function isUnique(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       console.log('i'+i,'j'+j);
+//       if (arr[i] == arr[j]) {
+//         return 'Not unique';
+//       } else {
+//       }
+//     }
+//   }
+//   return 'Unique';
+// }
+// console.log(isUnique([1,2,3,4,6,6]));
+// 17
+// function isSameDataType(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (typeof arr[i] != typeof arr[j]) {
+//         return 'Array has different datatypes';
+//       }
+//     }
+//   }
+//   return 'Array has the same datatype';
+// }
+// console.log(isSameDataType(['sfsfs', 'b', 'a']));
+
+//18
+// function isValidVariable(varName) {
+//   let validate = varName.match(/[^A-Za-z0-9$_]/gi);
+//   if (validate == null) {
+//     return `${varName} is valid`;
+//   } else {
+//     return `${varName} is not valid`;
+//   }
+// }
+// console.log(isValidVariable('af_dsaf$'));
+
+//19
+const sevenUniques = () => {
+  const arr = [];
+  let r1 = Math.floor(Math.random() * 10);
+  arr.push(r1);
+  let r2 = Math.floor(Math.random() * 10);
+  while(r2==r1){
+    r2 = Math.floor(Math.random() * 10);
+  }else{
+    r2=
+  }
+};

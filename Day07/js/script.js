@@ -818,14 +818,28 @@
 // console.log(isValidVariable('af_dsaf$'));
 
 //19
-const sevenUniques = () => {
-  const arr = [];
-  let r1 = Math.floor(Math.random() * 10);
-  arr.push(r1);
-  let r2 = Math.floor(Math.random() * 10);
-  while(r2==r1){
-    r2 = Math.floor(Math.random() * 10);
-  }else{
-    r2=
+// const sevenUniques = () => {
+//   const arr = [];
+//   let n0 = Math.floor(Math.random() * 10);
+//   arr.push(n0);
+//   for (let i = 1; i < 7; i++) {
+//     let numer = Math.floor(Math.random() * 10);
+//     while (arr.includes(numer)) {
+//       numer = Math.floor(Math.random() * 10);
+//     }
+//     arr.push(numer);
+//   }
+//   return arr;
+// };
+// console.log(sevenUniques());
+
+//20
+const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland'];
+const reverseCountries = (arr) => {
+  const reversedArr = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArr.push(arr[i]);
   }
+  return reversedArr;
 };
+console.log(reverseCountries(countries));

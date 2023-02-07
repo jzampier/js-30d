@@ -834,12 +834,12 @@
 // console.log(sevenUniques());
 
 //20
-const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland'];
-const reverseCountries = (arr) => {
-  const reversedArr = [];
-  for (let i = arr.length - 1; i >= 0; i--) {
-    reversedArr.push(arr[i]);
-  }
-  return reversedArr;
-};
-console.log(reverseCountries(countries));
+// const countries = ['Finland', 'Sweden', 'Norway', 'Denmark', 'Iceland'];
+// const reverseCountries = (arr) => {
+//   const reversedArr = [];
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     reversedArr.push(arr[i]);
+//   }
+//   return reversedArr;
+// };
+// console.log(reverseCountries(countries));

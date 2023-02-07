@@ -613,10 +613,126 @@
 
 // console.log(convertRgbToHexa('250,30,90'));
 
-//todo 07
-function generateColors(colorType, colorAmount) {
-  const colorArray = [];
-  if (colorType == 'hexa') {
-    for (let i = 0; i < colorAmount; i++) {}
-  }
-}
+//07
+// function generateColors(colorType, colorAmount) {
+//   const colorArray = [];
+//   if (colorType == 'hexa') {
+//     for (let i = 0; i < colorAmount; i++) {
+//       let a = Math.floor(Math.random() * 256).toString(16);
+//       if (a.length == 1) {
+//         a = '0' + a;
+//       }
+//       let b = Math.floor(Math.random() * 256).toString(16);
+//       if (b.length == 1) {
+//         b = '0' + b;
+//       }
+//       let c = Math.floor(Math.random() * 256).toString(16);
+//       if (c.length == 1) {
+//         c = '0' + c;
+//       }
+//       colorArray.push(`#${a}${b}${c}`);
+//     }
+//   } else if (colorType == 'rgb') {
+//     for (let i = 0; i < colorAmount; i++) {
+//       let r = Math.floor(Math.random() * 256);
+//       let g = Math.floor(Math.random() * 256);
+//       let b = Math.floor(Math.random() * 256);
+//       colorArray.push(`rgb(${r},${g},${b})`);
+//     }
+//   } else {
+//     console.log('Enter the correct color type (hexa or rgb');
+//   }
+//   return colorArray;
+// }
+// console.log(generateColors('hexa', 3));
+
+//08
+// function shuffleArray(arr) {
+//   let currInd = arr.length,
+//     randInd;
+//   while (currInd != 0) {
+//     randInd = Math.floor(Math.random() * currInd);
+//     currInd--;
+
+//     [arr[currInd], arr[randInd]] = [arr[randInd], arr[currInd]];
+//   }
+//   return arr;
+// }
+// const arr = ['a', 'b', 'c', 'd'];
+// console.table(arr)
+// console.log(shuffleArray(arr))
+
+//09
+// const fatorial = (num) => {
+//   let fat = 1;
+//   for (let i = num; i > 1; i--) {
+//     fat *= i;
+//   }
+//   return fat;
+// };
+// console.log(fatorial(6));
+
+//10
+// const isEmpty = (par)=>{
+//   console.log(typeof par);
+//   par == undefined? console.log('Parameter is empty'):console.log('ok');;
+// }
+// isEmpty()
+
+//11
+// function sum(){
+//   let sum = 0
+//   for (const argument of arguments) {
+//     sum += argument
+//   }
+//   return sum
+// }
+// console.log(sum(5,6,7))
+
+// const sum = (...args)=>{
+//   let sum=0
+//   for(const argument of args){
+//     sum+=argument
+//   }
+//   return sum
+// }
+// console.log(sum(4,5,6));
+
+//12
+// const sumOfArrayItems = (arr) => {
+//   let sum = 0;
+//   const numbers = [];
+//   for (const element of arr) {
+//     if (typeof element == 'number') {
+//       sum += element;
+//       numbers.push(element);
+//     }
+//   }
+//   if (arr.length == numbers.length) {
+//     return sum;
+//   } else {
+//     return 'There are non numbers in your array';
+//   }
+// };
+// console.log(sumOfArrayItems([1, 2, 10, 3]));
+
+//13
+// function average(arr) {
+//   let sum = 0;
+//   const onlyNumbers = [];
+//   for (const element of arr) {
+//     if (typeof element == 'number') {
+//       sum += element;
+//       onlyNumbers.push(element);
+//     }
+//   }
+//   if (arr.length == onlyNumbers.length) {
+//     return sum / arr.length;
+//   } else {
+//     return 'There are non numbers in your array';
+//   }
+// }
+
+// console.log(average([5, 5, 5, 1, 3, 4, 5, 6, 1111, 'a']));
+
+//14

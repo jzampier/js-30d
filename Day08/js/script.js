@@ -309,4 +309,65 @@ function signIn() {
     }
   }
 }
-signIn();
+//signIn();
+function rateProduct(userIdentifier, productId, prodRate) {
+  for (const product in products) {
+    if (Object.hasOwnProperty.call(products, product)) {
+      const prod = products[product];
+      if (prod._id == productId) {
+        prod.ratings.push({
+          userId: userIdentifier,
+          rate: prodRate,
+        });
+      }
+    }
+  }
+}
+console.log(products);
+// rateProduct('fg12cy', 'aegfal', 4.7);
+console.log(products);
+console.clear();
+
+function averageRating(id) {
+  for (const product of products) {
+    if (product._id == id) {
+      if (product['ratings'].length != 0) {
+        let sum = 0;
+        let qty = 0;
+        qty = product['ratings'].length;
+        for (const rating of product['ratings']) {
+          sum += rating.rate;
+        }
+        console.log(`Average Rating of ${id} : ${sum / qty}`);
+        return sum / qty;
+      } else {
+        console.log(`There is no rating for ${id}`);
+        return;
+      }
+    }
+  }
+  console.log('Invalid product ID');
+  return;
+}
+//averageRating('hedfcg');
+
+function likeProduct(user, prodId) {
+  for (const product of products) {
+    if (product._id === prodId) {
+      if (product.likes.length == 0) {
+        product.likes.push(user);
+      } else {
+        product.likes.pop();
+      }
+      return;
+    }
+  }
+  console.log(`Product ${prodId} not found`);
+  return;
+}
+
+likeProduct('zwf8md', 'eedfcf');
+console.log(products);
+// likeProduct('zwf8md', 'eedfcf');
+// console.log(products);
+console.clear();

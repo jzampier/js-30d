@@ -1,3 +1,5 @@
+import { countries, names, numbers, products } from './consts.js';
+
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -276,3 +278,76 @@ function callback(){
 //   return 0;
 // });
 // console.log(users);
+
+//LV 01
+
+//1
+//For each executes a callback to each element of an array
+//map executes a function and returns an array
+//filter returns an array of elements that got true on callback
+//reduce executes an call back and its return (a single value) is accumulated
+
+//2
+// const callback = (element) => {
+//   return element * 10;
+// };
+
+//3
+// countries.forEach((country)=>{
+//   console.log(country);
+// })
+
+//4
+// names.forEach((name)=>{
+//   console.log(name);
+// })
+
+//5
+// numbers.forEach(number => {
+//   console.log(number);
+// });
+
+//6
+// const newCountries = countries.map((country) => country.toUpperCase());
+
+// console.log(`LOG ~ newCountries`, newCountries)
+
+//7
+// const countriesLength = countries.map((country)=>country.length)
+// console.log(`LOG ~ countriesLength`, countriesLength)
+
+//8
+// const numbersToSquare = numbers.map(function (number) {
+//   return number ** 2;
+// });
+// console.log(`LOG ~ numbersToSquare ~ numbersToSquare`, numbersToSquare)
+
+//9
+// const newNames = names.map(function (name) {
+//   return name.toUpperCase();
+// });
+// console.log(newNames);
+
+//10
+// const productsPrices = products.map((product) => product.product+': R$ '+product.price);
+// console.log(`LOG ~ productsPrices`, productsPrices)
+
+//11
+// const countriesWithLand = countries.filter((country) =>
+//   country.toLowerCase().includes('land')
+// );
+// console.log(`LOG ~ countriesWithLand`, countriesWithLand)
+
+//12
+// const countriesWithSixChars = countries.filter(function (country) {
+//   return country.length == 6;
+// });
+// console.log(`LOG ~ countriesWithSixChars ~ countriesWithSixChars`, countriesWithSixChars)
+
+//13
+// const countriesWithSixMoreLetters = countries.filter(
+//   (country) => country.length >= 6
+// );
+// console.log(countriesWithSixMoreLetters);
+
+//14

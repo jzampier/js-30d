@@ -108,20 +108,20 @@ function callback(){
 
 // console.log(numbersToUppercase);
 
-const countries = [
-  'Albania',
-  'Bolivia',
-  'Canada',
-  'Denmark',
-  'Ethiopia',
-  'Finland',
-  'Germany',
-  'Hungary',
-  'Ireland',
-  'Japan',
-  'Kenya',
-  'Greenland',
-];
+// const countries = [
+//   'Albania',
+//   'Bolivia',
+//   'Canada',
+//   'Denmark',
+//   'Ethiopia',
+//   'Finland',
+//   'Germany',
+//   'Hungary',
+//   'Ireland',
+//   'Japan',
+//   'Kenya',
+//   'Greenland',
+// ];
 //? Arrow function
 // const countriesToUpperCase = countries.map((country) => {
 //   return country.toUpperCase();
@@ -145,30 +145,30 @@ const countries = [
 /*
 !   const countriesContainingLand = countries.filter((country) => country.includes('land'))
 */
-const countriesContainingLand = countries.filter((element) =>
-  element.includes('land')
-);
-console.log(countriesContainingLand);
+// const countriesContainingLand = countries.filter((element) =>
+//   element.includes('land')
+// );
+// console.log(countriesContainingLand);
 
-const countriesEndsByia = countries.filter((country) => country.endsWith('ia'));
-console.log(`LOG ~ countriesEndsByia`, countriesEndsByia);
+// const countriesEndsByia = countries.filter((country) => country.endsWith('ia'));
+// console.log(`LOG ~ countriesEndsByia`, countriesEndsByia);
 
-const countriesWithFiveLetters = countries.filter(
-  (country) => country.length === 5
-);
-console.log(`LOG ~ countriesWithFiveLetters`, countriesWithFiveLetters);
+// const countriesWithFiveLetters = countries.filter(
+//   (country) => country.length === 5
+// );
+// console.log(`LOG ~ countriesWithFiveLetters`, countriesWithFiveLetters);
 
-const scores = [
-  { name: 'Asabeneh', score: 95 },
-  { name: 'Lidiya', score: 98 },
-  { name: 'Mathias', score: 80 },
-  { name: 'Elias', score: 50 },
-  { name: 'Martha', score: 85 },
-  { name: 'John', score: 100 },
-];
+// const scores = [
+//   { name: 'Asabeneh', score: 95 },
+//   { name: 'Lidiya', score: 98 },
+//   { name: 'Mathias', score: 80 },
+//   { name: 'Elias', score: 50 },
+//   { name: 'Martha', score: 85 },
+//   { name: 'John', score: 100 },
+// ];
 
-const pplWithScoreGreaterEight = scores.filter((ppl) => ppl.score > 80);
-console.log(`LOG ~ pplWithScoreGreaterEight`, pplWithScoreGreaterEight);
+// const pplWithScoreGreaterEight = scores.filter((ppl) => ppl.score > 80);
+// console.log(`LOG ~ pplWithScoreGreaterEight`, pplWithScoreGreaterEight);
 
 //! Reduce
 /*
@@ -177,41 +177,102 @@ console.log(`LOG ~ pplWithScoreGreaterEight`, pplWithScoreGreaterEight);
 ?     return
 ?   }, initialValue)
  */
-const numbers = [1, 2, 3, 4, 5]; //                                      offset
-const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
-console.log(`LOG ~ sum`, sum);
+// const numbers = [1, 2, 3, 4, 5]; //                                      offset
+// const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+// console.log(`LOG ~ sum`, sum);
 
 //!Every
 //?Check if all the elements are similar in one aspect. It returns boolean
 
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook', '', ' '];
-const areAllStr = names.every((name) => typeof name === 'string'); // all names are strings?
-console.log(`LOG ~ areAllStr`, areAllStr);
+//const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook', '', ' '];
+// const areAllStr = names.every((name) => typeof name === 'string'); // all names are strings?
+// console.log(`LOG ~ areAllStr`, areAllStr);
 
-const bools = [true, true, true, true];
-const areAllTrue = bools.every((bool) => bool === true); // Are all true
-console.log(`LOG ~ areAllTrue`, areAllTrue);
+// const bools = [true, true, true, true];
+// const areAllTrue = bools.every((bool) => bool === true); // Are all true
+// console.log(`LOG ~ areAllTrue`, areAllTrue);
 
 //!Find
 //? Returns the first element which satisfies the condition
 //
-const ages = [24, 22, 25, 32, 35, 18];
+//const ages = [24, 22, 25, 32, 35, 18];
 
-const age = ages.find((age) => age < 20);
+// const age = ages.find((age) => age < 20);
 
-console.log(age);
+// console.log(age);
 
-const names2 = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
-const result = names2.find((name) => name.length < 7);
-console.log(`LOG ~ result`, result);
+// const names2 = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+// const result = names2.find((name) => name.length < 7);
+// console.log(`LOG ~ result`, result);
 //
 
-const scores2 = [
-  { name: 'Asabeneh', score: 95 },
-  { name: 'Mathias', score: 80 },
-  { name: 'Elias', score: 50 },
-  { name: 'Martha', score: 85 },
-  { name: 'John', score: 100 },
-];
-const score = scores2.find((user) => user.score <= 80);
-console.log(score.name, score.score);
+// const scores2 = [
+//   { name: 'Asabeneh', score: 95 },
+//   { name: 'Mathias', score: 80 },
+//   { name: 'Elias', score: 50 },
+//   { name: 'Martha', score: 85 },
+//   { name: 'John', score: 100 },
+// ];
+// const score = scores2.find((user) => user.score <= 80);
+// console.log(score.name, score.score);
+
+//! FindIndex. Return position of the first element which satisfies the condition
+//console.clear();
+// const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+// const ages = [24, 22, 25, 32, 35, 18];
+
+// const result = names.findIndex((name) => name.length > 7);
+// console.log(`LOG ~ result`, result); //index 0
+
+// const age = ages.findIndex((age) => age < 20);
+// console.log(age); //index 5
+
+//! array.some(()=>{}) check if some elements are similar in one aspect. (returns boolean)
+// const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+// const bools = [true, true, false, false];
+
+// const areSomeTrue = bools.some((b) => b === true);
+// console.log(`LOG ~ areSomeTrue`, areSomeTrue);
+
+// const areAllStr = names.some((name) => typeof name === 'number'); //exists at least one number? //false
+// console.log(`LOG ~ areAllStr`, areAllStr)
+
+//! array.sort() , modifies the original array, not reliable for numbers
+//? sorting strings
+// const products = ['Milk', 'Coffee', 'Sugar', 'Honey', 'Apple', 'Carrot'];
+// const products2 = [...products];
+// console.log(products.sort());
+// console.log(products2);
+
+//? sorting numbers
+// const numbers = [9.81, 3.14, 100, 37];
+// const copyNumbers = [...numbers];
+
+// console.log(copyNumbers);
+// numbers.sort((a, b) => a - b); //sort
+// console.log(numbers);
+// numbers.sort((a, b) => b - a); //reverse
+// console.log(numbers);
+
+//? Sorting object Arrays
+/*
+?   objArr.sort(function(a,b){
+?     if(a.key < b.key) return -1
+?     if(a.key > b.key) return 1
+?     return 0
+?   })
+*/
+
+// const users = [
+//   { name: 'Asabeneh', age: 150 },
+//   { name: 'Brook', age: 50 },
+//   { name: 'Eyob', age: 100 },
+//   { name: 'Elias', age: 22 },
+// ];
+
+// users.sort((a, b) => {
+//   if (a.age < b.age) return -1;
+//   if (a.age > b.age) return 1;
+//   return 0;
+// });
+// console.log(users);

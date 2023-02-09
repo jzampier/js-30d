@@ -351,3 +351,54 @@ function callback(){
 // console.log(countriesWithSixMoreLetters);
 
 //14
+// const countriesStartsE = countries.filter(function (country) {
+//   country.startsWith('E');
+// });
+// console.log(`LOG ~ countriesStartsE ~ countriesStartsE`, countriesStartsE);
+
+//15
+// const pricesWithValue = products.filter(
+//   (product) => typeof product.price == 'number'
+// );
+// console.log(`LOG ~ pricesWithValue`, pricesWithValue);
+
+//16
+// function getStringLists(arr) {
+//   const newArr = arr.map((item) => item.toString());
+//   return newArr;
+// }
+// const test = [1, 12, 'a', 'c', 20];
+// console.log(getStringLists(test));
+
+//17
+// const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+// console.log(`LOG ~ sum`, sum)
+
+//18
+// const concatCountries = countries.reduce((a, b) => {
+//   if (countries.indexOf(b) != countries.length - 1) {
+//     return a.concat(', ' + b);
+//   } else {
+//     return a.concat(' and ' + b + ' are north European countries');
+//   }
+// }, 'Estonia');
+
+// console.log(`LOG ~ concatCountries`, concatCountries);
+
+//19
+//some at least 1,
+//every -> all elements must satisfy the condition
+
+//20
+// const someLengthGreaterSeven = names.some(function (name) {
+//   return name.length > 7;
+// });
+// console.log(`LOG ~ someLengthGreaterSeven ~ someLengthGreaterSeven`, someLengthGreaterSeven) //true
+
+//21
+// const everyCountryContainsLand = countries.every((country) =>
+//   country.toLowerCase().includes('land')
+// );
+// console.log(`LOG ~ everyCountryContainsLand`, everyCountryContainsLand); //false
+
+//Todo 22

@@ -406,5 +406,20 @@ function callback(){
 
 //23
 
-//const country = countries.find((count) => count.length == 6);
-console.log(countries);
+// const country = countries.find((count) => count.length == 6);
+// console.log(country);
+
+//24
+// const country = countries.findIndex((country) => country.length == 6);
+// console.log(country);
+
+//25
+// const country = countries.findIndex((country) => country == 'norway');
+// console.log(country);
+
+//26
+const country = countries.findIndex((country) => country == 'Russia');
+console.log(country);
+
+//Exercises Lvl 2
+//1

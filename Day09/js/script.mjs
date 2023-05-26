@@ -1,4 +1,4 @@
-
+import { countries } from './consts.mjs';
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -400,7 +400,11 @@ function callback(){
 // );
 // console.log(`LOG ~ everyCountryContainsLand`, everyCountryContainsLand); //false
 
-//Todo 22
-const ages = [24, 22, 25, 32, 35, 18];
-const age = ages.find((age) => age < 20);
-console.log(`LOG ~ age`, age);
+// 22
+// Find -> Find the first element that satisfies the condition
+// findindex -> Find the position of the first element that satisfies the condition
+
+//23
+
+//const country = countries.find((count) => count.length == 6);
+console.log(countries);

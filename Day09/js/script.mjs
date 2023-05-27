@@ -441,4 +441,22 @@ function callback(){
 // const countriesWithLand = countries.filter((country) => country.toLowerCase().includes('land'));
 // console.log(countriesWithLand)
 
-//4
+/* 4 Create a function which return an array of objects, which is the letter and
+how many times this letter was used to begin a name of a country */
+
+/* function letterAmountUsed(arr) {
+  const letterAmount = arr.map((country) => {
+    let letter;
+    letter = country.charAt(0);
+    return letter;
+  });
+  const occurrences = letterAmount.reduce(function (acc, curr) {
+    return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  }, {});
+  return occurrences;
+}
+console.log(letterAmountUsed(countries)); */
+
+/* 5 Declare a getFirstTenCountries function and return an array of ten
+countries. Use different functional programming to work on the countries.js
+array */

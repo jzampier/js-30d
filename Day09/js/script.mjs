@@ -1,4 +1,5 @@
-import { countries, products } from './consts.mjs';
+//import { countries, products } from './consts.mjs';
+import { countries } from './countries.mjs';
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -435,3 +436,9 @@ function callback(){
 //       return accumulator;
 //   },0)
 // console.log(totalProductPrice2);
+
+//3
+// const countriesWithLand = countries.filter((country) => country.toLowerCase().includes('land'));
+// console.log(countriesWithLand)
+
+//4

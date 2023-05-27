@@ -1,5 +1,6 @@
 //import { countries, products } from './consts.mjs';
 import { countries } from './countries.mjs';
+import { countries as countryData }  from './countries_data.mjs';
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -463,11 +464,60 @@ array */
 
 /* const tenfirstcountries = (arr) => arr.slice(0, 10);
 console.log(tenfirstcountries(countries)); */
-function getFirstTenCountries(arr) {
+/* function getFirstTenCountries(arr) {
   const firstTenCountries = arr.filter((country, index) => index < 10);
   return firstTenCountries;
 }
 console.log(
   'These are the first ten countries of the Countries array :>> ',
   getFirstTenCountries(countries)
-);
+); */
+
+/*6 Declare a getLastTenCountries function which which returns the last ten
+countries in the countries array.*/
+
+/* function getLastTenCountries(arr) {
+  const lastTenCountries = arr.filter(
+    (country, index) => index >= arr.length - 10
+  );
+  return lastTenCountries;
+}
+console.log(
+  'These are the last ten countries of the Countries array :>> ',
+  getLastTenCountries(countries)
+); */
+
+/* 7 Find out which letter is used many times as initial for a country name
+from the countries array (eg. Finland, Fiji, France etc) */
+
+/* function getLetterUsedManyTimes(arr) {
+  const letterUsedManyTimes = arr.map((country) => {
+    const letter = country.charAt(0);
+    return letter;
+  });
+  const occurrences = letterUsedManyTimes.reduce(function (acc, curr) {
+    return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  }, {});
+  const letterUsedManyTimes2 = Object.keys(occurrences).reduce(function (a, b) {
+    return occurrences[a] > occurrences[b] ? a : b;
+  });
+  return letterUsedManyTimes2;
+}
+console.log(getLetterUsedManyTimes(countries)); */
+
+//Level 3
+/* 1 Use the countries information, in the data folder. Sort countries by name,
+by capital, by population */
+function sortCountriesByName(arr) {
+  const sortedByName =  arr.sort((a, b) => a.name.localeCompare(b.name));
+  return sortedByName;
+}
+function sortCountriesByCapital(arr) {
+  const sortedByCapital =  arr.sort((a, b) => a.capital.localeCompare(b.capital));
+  return sortedByCapital;
+}
+function sortCountriesByPop(arr) {
+  const sortedByPopulation =  arr.sort((a, b) => b.population - a.population);
+  return sortedByPopulation;
+}
+console.log(sortCountriesByPop(countryData));

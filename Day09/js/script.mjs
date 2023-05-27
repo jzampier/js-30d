@@ -423,3 +423,8 @@ console.log(country);
 
 //Exercises Lvl 2
 //1
+const numeros = [1, 2, 3, 4, 5];
+
+const temNumeroPar = numeros.every((numero) => numero % 2 === 0);
+
+console.log(temNumeroPar);

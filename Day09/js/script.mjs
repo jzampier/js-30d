@@ -460,3 +460,14 @@ console.log(letterAmountUsed(countries)); */
 /* 5 Declare a getFirstTenCountries function and return an array of ten
 countries. Use different functional programming to work on the countries.js
 array */
+
+/* const tenfirstcountries = (arr) => arr.slice(0, 10);
+console.log(tenfirstcountries(countries)); */
+function getFirstTenCountries(arr) {
+  const firstTenCountries = arr.filter((country, index) => index < 10);
+  return firstTenCountries;
+}
+console.log(
+  'These are the first ten countries of the Countries array :>> ',
+  getFirstTenCountries(countries)
+);

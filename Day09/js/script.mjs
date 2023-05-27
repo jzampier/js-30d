@@ -1,4 +1,4 @@
-import { countries } from './consts.mjs';
+import { countries, products } from './consts.mjs';
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -418,13 +418,10 @@ function callback(){
 // console.log(country);
 
 //26
-const country = countries.findIndex((country) => country == 'Russia');
-console.log(country);
+// const country = countries.findIndex((country) => country == 'Russia');
+// console.log(country);
 
 //Exercises Lvl 2
 //1
-const numeros = [1, 2, 3, 4, 5];
-
-const temNumeroPar = numeros.every((numero) => numero % 2 === 0);
-
-console.log(temNumeroPar);
+const totalProductPrice = products.map((product) => product.price).filter((price) => typeof price == 'number').reduce((acc, curr) => acc + curr, 0);
+console.log(`LOG ~ totalProductPrice`, totalProductPrice);

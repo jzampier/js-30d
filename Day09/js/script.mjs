@@ -1,6 +1,6 @@
 //import { countries, products } from './consts.mjs';
 import { countries } from './countries.mjs';
-import { countries as countryData }  from './countries_data.mjs';
+import { countries as countryData } from './countries_data.mjs';
 //!Higher Order function
 //takes other function(s) as parameter(s)
 //!Callback
@@ -508,7 +508,7 @@ console.log(getLetterUsedManyTimes(countries)); */
 //Level 3
 /* 1 Use the countries information, in the data folder. Sort countries by name,
 by capital, by population */
-function sortCountriesByName(arr) {
+/* function sortCountriesByName(arr) {
   const sortedByName =  arr.sort((a, b) => a.name.localeCompare(b.name));
   return sortedByName;
 }
@@ -520,4 +520,34 @@ function sortCountriesByPop(arr) {
   const sortedByPopulation =  arr.sort((a, b) => b.population - a.population);
   return sortedByPopulation;
 }
-console.log(sortCountriesByPop(countryData));
+console.log(sortCountriesByPop(countryData)); */
+
+/* 2 - Find the 10 most spoken languages: */
+
+/* function findTopLanguages(arr, qty) {
+  const languageCount = {};
+
+  // Percorre cada objeto do array e conta as linguagens
+  arr.forEach((country) => {
+    country.languages.forEach((language) => {
+      languageCount[language] = (languageCount[language] || 0) + 1;
+    });
+  });
+
+  // Transforma o objeto em um array de objetos { language, count }
+  const languageArray = Object.keys(languageCount).map((language) => ({
+    language,
+    count: languageCount[language],
+  }));
+
+  // Classifica as linguagens com base na contagem
+  const sortedLanguages = languageArray.sort((a, b) => b.count - a.count);
+
+  // Retorna os 3 primeiros objetos com a linguagem e a contagem
+  return sortedLanguages.slice(0, qty);
+}
+
+console.log(findTopLanguages(countryData, 10)); */
+
+/* 3 - Use countries_data.js file create a function which create the ten most
+populated countries */

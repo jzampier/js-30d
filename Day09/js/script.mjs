@@ -423,5 +423,15 @@ function callback(){
 
 //Exercises Lvl 2
 //1
-const totalProductPrice = products.map((product) => product.price).filter((price) => typeof price == 'number').reduce((acc, curr) => acc + curr, 0);
-console.log(`LOG ~ totalProductPrice`, totalProductPrice);
+// const totalProductPrice = products.map((product) => product.price).filter((price) => typeof price == 'number').reduce((acc, curr) => acc + curr, 0);
+// console.log(`LOG ~ totalProductPrice`, totalProductPrice);
+
+//2
+// const totalProductPrice2 = products.reduce(
+//   (accumulator, currentProduct) => {
+//     if (typeof currentProduct.price == 'number') {
+//       return accumulator + currentProduct.price;
+//       }
+//       return accumulator;
+//   },0)
+// console.log(totalProductPrice2);

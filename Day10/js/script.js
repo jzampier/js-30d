@@ -99,34 +99,68 @@ for (const language of setOfLanguages){
 // const map = new Map();
 // console.log(`LOG ~ map:`, map)
 //? Creating a map from array
-const countries = [
-  ['Finland', 'Helsinki'],
-  ['Sweden', 'Stockholm'],
-  ['Norway', 'Oslo'],
-];
-const map = new Map(countries);
-console.log(`LOG ~ map:`, map);
-console.log(`LOG ~ map size:`, map.size);
+// const countries = [
+//   ['Finland', 'Helsinki'],
+//   ['Sweden', 'Stockholm'],
+//   ['Norway', 'Oslo'],
+// ];
+// const map = new Map(countries);
+// console.log(`LOG ~ map:`, map);
+// console.log(`LOG ~ map size:`, map.size);
 
 //? Adding values to the Map .set
-const countriesMap = new Map();
-countriesMap.set('Finland', 'Helsinki');
-countriesMap.set('Sweden', 'Stockholm');
-countriesMap.set('Norway', 'Oslo');
-console.log(countriesMap.size);
-console.log(countriesMap);
+// const countriesMap = new Map();
+// countriesMap.set('Finland', 'Helsinki');
+// countriesMap.set('Sweden', 'Stockholm');
+// countriesMap.set('Norway', 'Oslo');
+// console.log(countriesMap.size);
+// console.log(countriesMap);
 
 //?  Getting values from the Map .get
-console.log(`Capital of Norway =>`, countriesMap.get('Norway'));
+// console.log(`Capital of Norway =>`, countriesMap.get('Norway'));
 
 //? Checking if a key exists in the Map .has
-console.log(countriesMap.has('Finland'));
+// console.log(countriesMap.has('Finland'));
 
 //? Getting all values from map using loop
-countriesMap.forEach((capital, country) =>
-  console.log(`Pais: ${country}, Capital: ${capital}`)
-);
+// countriesMap.forEach((capital, country) =>
+//   console.log(`Pais: ${country}, Capital: ${capital}`)
+// );
 
 //? Deleting values from the Map .delete`))
-console.log(countriesMap.delete('Norway'));
-console.log(countriesMap);
+// console.log(countriesMap.delete('Norway'));
+// console.log(countriesMap);
+
+//! Exercises:
+// Level 1
+const a = [4, 5, 8, 9];
+const b = [3, 4, 5, 7];
+const countries = ['Finland', 'Sweden', 'Norway'];
+// 1. Create an empty set
+const newSet = new Set();
+
+// 2. Create a set containing 0 to 10 using loop
+for (let i = 0; i <= 10; i++) {
+  newSet.add(i);
+}
+console.log(newSet);
+
+// 3. Remove element from a set
+console.log(newSet.delete(5));
+console.log(newSet);
+
+// 4. clear a set
+console.log(newSet.clear());
+console.log(newSet);
+
+// 5. Create a set of 5 string elements from array
+const arr = ['a', 'b', 'c', 'd', 'e'];
+const setOfStrings = new Set(arr);
+console.log(setOfStrings);
+
+// 6. Create a map of countries and number of characters
+const contries = ['Brazil', 'Argentina', 'Chile', 'Uruguay', 'Peru'];
+const countriesAndChars = contries.map((country) => [country, country.length]);
+console.log(countriesAndChars);
+const countriesMap = new Map(countriesAndChars);
+console.log(`LOG ~ countriesMap:`, countriesMap);

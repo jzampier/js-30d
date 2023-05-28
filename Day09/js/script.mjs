@@ -566,4 +566,116 @@ a sample(mean, median, mode) and measure of variability(range, variance,
 standard deviation). In addition to those measures find the min, max, count,
 percentile, and frequency distribution of the sample. You can create an object
 called statistics and create all the functions which do statistical
-calculations as method for the statistics object. Check the output below. */
+calculations as method for the statistics object. Check the output below.
+console.log('Count:', statistics.count()) // 25
+console.log('Sum: ', statistics.sum()) // 744
+console.log('Min: ', statistics.min()) // 24
+console.log('Max: ', statistics.max()) // 38
+console.log('Range: ', statistics.range() // 14
+console.log('Mean: ', statistics.mean()) // 30
+console.log('Median: ',statistics.median()) // 29
+console.log('Mode: ', statistics.mode()) // {'mode': 26, 'count': 5}
+console.log('Variance: ',statistics.var()) // 17.5
+console.log('Standard Deviation: ', statistics.std()) // 4.2
+console.log('Variance: ',statistics.var()) // 17.5
+console.log('Frequency Distribution: ',statistics.freqDist()) # [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+console.log(statistics.describe())
+
+Count: 25
+Sum:  744
+Min:  24
+Max:  38
+Range:  14
+Mean:  30
+Median:  29
+Mode:  (26, 5)
+Variance:  17.5
+Standard Deviation:  4.2
+Frequency Distribution: [(20.0, 26), (16.0, 27), (12.0, 32), (8.0, 37), (8.0, 34), (8.0, 33), (8.0, 31), (8.0, 24), (4.0, 38), (4.0, 29), (4.0, 25)]
+*/
+
+const ages = [
+  31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37,
+  31, 34, 24, 33, 29, 26,
+];
+
+const statistics = {
+  count: function () {
+    return ages.length;
+  },
+  sum: function () {
+    return ages.reduce((a, c) => a + c, 0);
+  },
+  min: function () {
+    return Math.min(...ages);
+  },
+  max: function () {
+    return Math.max(...ages);
+  },
+  range: function () {
+    //return Math.max(...ages) - Math.min(...ages);
+    return this.max() - this.min();
+  },
+  mean: function () {
+    return this.sum() / this.count();
+  },
+  median: function () {
+    const sortedAges = ages.sort((a, b) => a - b);
+    return sortedAges[Math.round(this.count() / 2) - 1];
+  },
+  mode: function () {
+    const occurrences = ages.reduce(function (acc, curr) {
+      return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+    }, {});
+    const mode = Object.keys(occurrences).reduce(function (a, b) {
+      return occurrences[a] > occurrences[b] ? a : b;
+    });
+    return { mode, count: occurrences[mode] };
+  },
+  var: function () {
+    const mean = this.mean();
+    const squaredDiffs = ages.map((age) => Math.pow(age - mean, 2));
+    return (squaredDiffs.reduce((a, c) => a + c, 0) / this.count()).toFixed(1);
+  },
+  std: function () {
+    return Math.sqrt(this.var()).toFixed(1);
+  },
+  percentile: function () {
+    const occurrences = ages.reduce(function (acc, curr) {
+      return acc[curr] ? ++acc[curr] : (acc[curr] = 1), acc;
+    }, {});
+    const chaves = Object.keys(occurrences);
+    const percentile = chaves.map((key) => {
+      return { Percentile: (occurrences[key] / this.count()) * 100, Age: key };
+    });
+    return percentile;
+  },
+  describe: function () {
+    return {
+      count: this.count(),
+      sum: this.sum(),
+      min: this.min(),
+      max: this.max(),
+      range: this.range(),
+      mean: this.mean(),
+      median: this.median(),
+      mode: this.mode(),
+      var: this.var(),
+      std: this.std(),
+      percentile: this.percentile(),
+    };
+  },
+};
+console.log('Count: ', statistics.count());
+console.log('Sum: ', statistics.sum());
+console.log('Min: ', statistics.min());
+console.log('Max: ', statistics.max());
+console.log('Range: ', statistics.range());
+console.log('Mean: ', statistics.mean());
+console.log('Median: ', statistics.median());
+console.log('Mode: ', statistics.mode());
+console.log('Variance: ', statistics.var());
+console.log('Standard Deviation: ', statistics.std());
+console.log('Percentile: ', statistics.percentile());
+console.log('-------');
+console.log(statistics.describe());

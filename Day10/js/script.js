@@ -194,6 +194,24 @@ const countries = ['Finland', 'Sweden', 'Norway'];
 // const C = new Set(c);
 // console.log(C);
 
-//LV-4
-import {countries as cts} from './countries_data.js';
+//LV-3
+import { countries as cts } from './countries_data.js';
 //1 How many languages are there in the countries object file
+const langFlatMap = cts.flatMap((country) => country.languages);
+const langSet = new Set(langFlatMap);
+//console.log(langSet);
+const counts = [];
+//const count = {}
+
+for (const l of langSet) {
+  const filteredLang = langFlatMap.filter((lng) => lng === l);
+  counts.push({ lang: l, count: filteredLang.length });
+}
+//console.log('FlatMap\n',langFlatMap);
+//console.log(counts);
+//2 - Use the countries data to find the 10 most spoken languages
+function mostSpokenLanguages(arr, qty) {
+  const sortedArr = arr.sort((a, b) => b.count - a.count);
+  return sortedArr.slice(0, qty);
+}
+console.log(mostSpokenLanguages(counts, 10));

@@ -59,11 +59,11 @@
 // }
 
 //? Destructuring Objects - name of variable must be the same as the key/property
-const rectangle = {
-  width: 20,
-  height: 10,
-  area: 200,
-};
+// const rectangle = {
+//   width: 20,
+//   height: 10,
+//   area: 200,
+// };
 // let { width, height, area, perimeter } = rectangle;
 // console.log(width, height, area, perimeter);
 //? but you can change the name of the variable during destructuring
@@ -236,7 +236,25 @@ const rectangle = {
 //!Exercises
 import { constants, countries, rectangle, users } from './consts.js';
 //! Lv-1
-// 1 Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
+// 1 Destructure and assign the elements of constants array to e, pi, gravity,
+//humanBodyTemp, waterBoilingTemp.
+let [e, pi, gravity, hbt, wbt] = constants;
+console.log(e, pi, gravity, hbt, wbt);
 
-// 2 Destructure and assign the elements of countries array to fin, est, sw, den, nor
+// 2 Destructure and assign the elements of countries array to fin, est, sw,
+//den, nor
+let [fin, est, sw, den, nor] = countries;
+console.log(fin, est, sw, den, nor);
+
 // 3 Destructure the rectangle object by its properties or keys.
+let { width, height, area, perimeter } = rectangle;
+console.log('width', width);
+console.log('height', height);
+console.log('area', area);
+console.log('perimeter', perimeter);
+
+//! Lv-2
+/* 1 Iterate through the users array and get all the keys of the object using
+destructuring */
+
+//2 Find the persons who have less than two skills

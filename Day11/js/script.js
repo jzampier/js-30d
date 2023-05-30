@@ -256,12 +256,16 @@ console.log('perimeter', perimeter);
 //! Lv-2
 /* 1 Iterate through the users array and get all the keys of the object using
 destructuring */
-
+// for (const { name, scores, skills, age } of users) {
+//   console.log(name, scores, skills, age);
+// }
 //2 Find the persons who have less than two skills
-const usersWithLessTwoSkills = [];
-for (const { name, skills } of users) {
-  if (skills.length < 2) {
-    usersWithLessTwoSkills.push(name);
-  }
-}
-console.log(usersWithLessTwoSkills);
+// const usersWithLessTwoSkills = [];
+// for (const { name, skills } of users) {
+//   if (skills.length < 2) {
+//     usersWithLessTwoSkills.push(name);
+//   }
+// }
+// console.log(usersWithLessTwoSkills);
+
+//! Lv3

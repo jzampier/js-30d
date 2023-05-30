@@ -159,8 +159,84 @@ const rectangle = {
 //! Spread Operator (or Rest Operator)
 //? Spread Operator = get the rest elements as  array and spread array elements
 //? to another array
-const nums = [1,2,3,4,5,6,7,8,9,10]
-let [num1, num2, num3, ...rest] = nums
-console.log(num1, num2, num3);
-console.log(rest);
-console.log(...nums);
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let [num1, num2, num3, ...rest] = nums;
+// console.log(num1, num2, num3);
+// console.log(rest);
+// console.log(...nums);
+
+// const countries = [
+//   'Germany',
+//   'France',
+//   'Belgium',
+//   'Finland',
+//   'Sweden',
+//   'Norway',
+//   'Denmark',
+//   'Iceland',
+// ];
+// let [ger, fra, ,...nordicCountries]= countries;
+// console.log(ger);
+// console.log(fra);
+// console.log(nordicCountries);
+
+//? Spread Operator to copy arrays
+// const evens = [0, 2, 4, 6, 8, 10];
+// const evenNumbers = [...evens]
+
+// const odds = [1, 3, 5, 7, 9];
+// const oddNumbers = [...odds]
+
+// const wholeNumbers = [...evens, ...odds]
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+// console.log(wholeNumbers);
+
+// const frontEnd = ['HTML', 'CSS', 'JS', 'React'];
+// const backEnd = ['Node', 'Express', 'MongoDB'];
+// const fullStack = [...frontEnd, ...backEnd]
+// const fullStack2 = [frontEnd, backEnd]
+// console.log(fullStack2);
+// console.log(fullStack);
+
+//? Spread operator to copy objects
+// const user = {
+//   name: 'Kiko',
+//   title: 'Mechanic',
+//   country: 'Brazil',
+//   city: 'Manaus',
+// };
+
+// const copiedUser = { ...user };
+// console.log(copiedUser);
+
+//? Modifying or changing the object while copying
+// const copiedUser2 = { ...user, title: 'Engenheiro', country: 'England' };
+// console.table(copiedUser2);
+
+//? Spread Operator with arrow function: Whenever we want to write an arrow
+//? function which takes unlimited number of args. the arg passed will change
+//? to an array
+
+// const allArgs = (...args) => {
+//   console.log(args);
+// };
+// allArgs(1, 3, 5, 9); //* [1, 3, 5, 9] all args passed became an array
+
+// const sumAllNumbers = (...args) => {
+//   let sum = 0;
+//   for (const number of args) {
+//     sum += number;
+//   }
+//   return sum;
+// };
+// console.log(sumAllNumbers(1, 2, 3, 4, 5, 6));
+
+//!Exercises
+import { constants, countries, rectangle, users } from './consts.js';
+//! Lv-1
+// 1 Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.
+
+// 2 Destructure and assign the elements of countries array to fin, est, sw, den, nor
+// 3 Destructure the rectangle object by its properties or keys.

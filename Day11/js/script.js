@@ -258,3 +258,10 @@ console.log('perimeter', perimeter);
 destructuring */
 
 //2 Find the persons who have less than two skills
+const usersWithLessTwoSkills = [];
+for (const { name, skills } of users) {
+  if (skills.length < 2) {
+    usersWithLessTwoSkills.push(name);
+  }
+}
+console.log(usersWithLessTwoSkills);

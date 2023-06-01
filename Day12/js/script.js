@@ -235,7 +235,31 @@ console.log(tenMostFrequentWords(paragraph, 10));
 //! Exercises lv3
 /* 1 Writ a function which cleans text. Clean the following text. After 
 cleaning, count three most frequent words in the string.*/
-sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
+const sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
 
 /* 2 2. Write a function which find the most frequent words. After cleaning, 
 count three most frequent words in the string. */
+const cleanseText = (str, qty) => {
+  const cleansePattern = /[^a-zA-Z0-9,. ]/g;
+  const cleansedText = str.replace(cleansePattern, '');
+  const wordsPattern = /\w+/g;
+  const words = cleansedText.match(wordsPattern);
+  console.log(cleansedText);
+  const contagem = words.reduce((acc, curr) => {
+    acc[curr] = (acc[curr] || 0) + 1;
+    return acc;
+  }, {});
+  const result = Object.entries(contagem).map(([word, count]) => ({
+    word,
+    count,
+  }));
+  result.sort((a, b) => {
+    if (a.count !== b.count) {
+      return b.count - a.count;
+    } else {
+      return a.word.localeCompare(b.word);
+    }
+  });
+  return result.slice(0, qty);
+};
+console.log(cleanseText(sentence, 3));

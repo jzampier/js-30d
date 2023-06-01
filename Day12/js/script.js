@@ -69,7 +69,7 @@ $ ends with
 * zero or more times
     r'[a]*' means a optional or it can occur many times.
 + one or more times
-    r'[a]+' means at least once or more times
+    r'[a]+' means at least once or more timesF
 ? zero or one times
     r'[a]?' means zero times or once
 \b word bounder, matches with the beginning or ending of a word
@@ -105,25 +105,65 @@ $ ends with
 // console.log(txt.match(pattern2));
 
 //? Period(.)
-const txt = 'Apple and banana are fruits';
-const pattern = /[a]./g; //. means any character expect new line character(\n)
-console.log(txt.match(pattern));
+// const txt = 'Apple and banana are fruits';
+// const pattern = /[a]./g; //. means any character expect new line character(\n)
+// console.log(txt.match(pattern));
 
-const pattern2 = /[a].+/g; //. means any character , + any character one or more times
-console.log(txt.match(pattern2));
+// const pattern2 = /[a].+/g; //. means any character , + any character one or more times
+// console.log(txt.match(pattern2));
 
 //? Zero or more times(*)
 //Pattern may noto occur or it can occur many times
-const pattern3 = /[a].*/g;
-console.log(txt.match(pattern3));
+// const pattern3 = /[a].*/g;
+// console.log(txt.match(pattern3));
 
 //? Zero or one times(?)
 //Pattern may not occur or it can occur once
-const txt2 =
-  'I am not sure if there is a convention how to write the word \
-e-mail. Some people write it email others may write it as Email or E-mail.';
+// const txt2 =
+//   'I am not sure if there is a convention how to write the word \
+// e-mail. Some people write it email others may write it as Email or E-mail.';
 
-const pattern4 = /[Ee]-?mail/g; //? means optional
-console.log(txt2.match(pattern4));
+// const pattern4 = /[Ee]-?mail/g; //? means optional
+// console.log(txt2.match(pattern4));
 
 //?Quantifier in RegExp
+// const txt = 'This regular expression example was made in December 6,  2019.';
+// const pattern = /\b\w{4}\b/g; //  exactly words with 4 characters
+// console.log(txt.match(pattern));
+
+// const pattern2 = /\b[a-zA-Z]{4}\b/g; // exactly words with 4 characters without numbers
+// console.log(txt.match(pattern2));
+
+// const pattern3 = /\d{4}/g; // a number with 4 digits
+// console.log(txt.match(pattern3));
+
+// const pattern4 = /\d{1,4}/g; // a number with 1 to 4 digits
+// console.log(txt.match(pattern4));
+
+//? Cart ^
+//* Starts with ^
+// const pattern6 = /^This/g; // ^ means starts with
+// console.log(txt.match(pattern6));
+
+//* Negation [^blablabla]
+// const pattern7 = /[^A-Za-z,. ]+/g; // ^ in set means negation, not A to Z, not a to z, no space, no comma, no period.
+// console.log(txt.match(pattern7));
+
+//? Exact match
+// Should have ^ starting and $ at the end /^[A-Z][a-z]{3,12}$/
+// let pattern8 = /^[F-L][a-z]{4,12}$/;
+// let name = 'Julio';
+// let result = pattern8.test(name);
+// console.log(result);
+
+//!Exercises
+//! Level 1
+/* 1 Calculate the total annual income of the person from the following text.
+‘He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro
+online courses per month.’ */
+
+/* 2 The position of some particles on the horizontal x-axis -12, -4, -3 and 
+-1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. 
+Extract these numbers and find the distance between the two furthest particles.*/
+
+/* 3 Write a pattern which identify if a string is a valid JavaScript variable*/

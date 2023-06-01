@@ -161,9 +161,81 @@ $ ends with
 /* 1 Calculate the total annual income of the person from the following text.
 ‘He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro
 online courses per month.’ */
+// const txt =
+//   'He earns 4000 euro from salary per month, 10000 euro annual bonus, 5500 euro \
+// online courses per month.';
+// const pattern = /\d+/g;
+// const mony = txt.match(pattern);
+// console.log(mony);
+
+// const calculateTotalIncome = (arr) => {
+//   const total = arr.reduce((acc, curr) => {
+//     return acc + parseInt(curr);
+//   }, 0);
+//   return total;
+// };
+// console.log(calculateTotalIncome(mony));
 
 /* 2 The position of some particles on the horizontal x-axis -12, -4, -3 and 
 -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction. 
 Extract these numbers and find the distance between the two furthest particles.*/
+// const txt2 =
+//   'The position of some particles on the horizontal x-axis -12, -4, -3 and \
+// -1 in the negative direction, 0 at origin, 4 and 8 in the positive direction.';
+// const points = ['-1', '2', '-4', '-3', '-1', '0', '4', '8'];
+// const pattern2 = /\-?\d+/g;
+// const positions = txt2.match(pattern2).map((item) => parseInt(item));
+// console.log(positions);
+// const calculateDistance = (arr) => {
+//   const max = Math.max(...arr);
+//   const min = Math.min(...arr);
+//   return Math.abs(max - min);
+// };
+
+// console.log(calculateDistance(positions));
 
 /* 3 Write a pattern which identify if a string is a valid JavaScript variable*/
+// const is_valid_variable = (string) => {
+//   const pattern = /^[a-zA-Z_$][a-zA-Z_$0-9]*$/;
+//   console.log(pattern.test(string));
+// };
+
+// is_valid_variable('_first_name');
+
+//! Exercises lv2
+/*1 Write a function called tenMostFrequentWords which get the ten most frequent 
+word from a string?*/
+const paragraph = `I love teaching. If you do not love teaching what else can you \
+love. I love Python if you do not love something which can give you all the \
+capabilities to develop an application what else can you love.`;
+
+const tenMostFrequentWords = (str, qty) => {
+  const wordsPattern = /\w+/g;
+  const words = str.match(wordsPattern);
+  const occurrences = words.reduce((acc, curr) => {
+    acc[curr] = (acc[curr] || 0) + 1;
+    return acc;
+  }, {});
+  const result = Object.entries(occurrences).map(([word, count]) => ({
+    word,
+    count,
+  }));
+  result.sort((a, b) => {
+    if (a.count !== b.count) {
+      return b.count - a.count;
+    } else {
+      return a.word.localeCompare(b.word);
+    }
+  });
+  return result.slice(0, qty);
+};
+
+console.log(tenMostFrequentWords(paragraph, 10));
+
+//! Exercises lv3
+/* 1 Writ a function which cleans text. Clean the following text. After 
+cleaning, count three most frequent words in the string.*/
+sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;. There $is nothing; &as& mo@re rewarding as educa@ting &and& @emp%o@wering peo@ple. ;I found tea@ching m%o@re interesting tha@n any other %jo@bs. %Do@es thi%s mo@tivate yo@u to be a tea@cher!?`;
+
+/* 2 2. Write a function which find the most frequent words. After cleaning, 
+count three most frequent words in the string. */

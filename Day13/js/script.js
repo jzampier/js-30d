@@ -176,3 +176,32 @@ console.error('Seu computador deu pau devido ao Jadson Virus');
 //? Exercises:Level 3
 console.clear();
 // 1- Check the speed difference among the following loops: while, for, for of, forEach
+console.warn('while loop');
+console.time('while loop');
+let i = 0;
+while (i < countries.length) {
+  console.log(countries[i][0], countries[i][1]);
+  i++;
+}
+console.timeEnd('while loop');
+
+console.warn('for loop');
+console.time('for loop');
+for (let i = 0; i < countries.length; i++) {
+  console.log(countries[i][0], countries[i][1]);
+}
+console.timeEnd('for loop');
+
+console.warn('for of loop');
+console.time('for of loop');
+for (const [country, city] of countries) {
+  console.log(country, city);
+}
+console.timeEnd('for of loop');
+
+console.warn('forEach loop');
+console.time('forEach loop');
+countries.forEach(([country, city]) => {
+  console.log(country, city);
+});
+console.timeEnd('forEach loop');

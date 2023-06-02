@@ -142,3 +142,32 @@ console.group('Users');
 console.log(user);
 console.log(users);
 console.groupEnd();
+
+//? console.count() , used to count the number of times a particular log
+console.clear();
+const func = () => {
+  console.count('A function has been called');
+};
+func();
+func();
+func();
+func();
+
+console.clear();
+//! Exercises
+// Exercises:Level 1
+// 1- Display the countries array as a table
+console.table(countries);
+// 2- Display the countries object as a table
+console.table(user);
+// 3- Use console.group() to group logs
+console.group('Countries and User');
+console.table(countries);
+console.table(user);
+console.groupEnd();
+// Exercises:Level 2
+// 1- 10 > 2 * 10 use console.assert()
+// 2- Write a warning message using console.warn()
+// 3- Write an error message using console.error()
+// Exercises:Level 3
+// 1- Check the speed difference among the following loops: while, for, for of, forEach

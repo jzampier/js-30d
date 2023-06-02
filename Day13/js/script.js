@@ -155,7 +155,7 @@ func();
 
 console.clear();
 //! Exercises
-// Exercises:Level 1
+//? Exercises:Level 1
 // 1- Display the countries array as a table
 console.table(countries);
 // 2- Display the countries object as a table
@@ -165,9 +165,14 @@ console.group('Countries and User');
 console.table(countries);
 console.table(user);
 console.groupEnd();
-// Exercises:Level 2
+//? Exercises:Level 2
+console.clear();
 // 1- 10 > 2 * 10 use console.assert()
+console.assert(10 > 2 * 10, '10 nao eh maior que 20');
 // 2- Write a warning message using console.warn()
+console.warn('Seu computador esta infectado com Jadson Virus');
 // 3- Write an error message using console.error()
-// Exercises:Level 3
+console.error('Seu computador deu pau devido ao Jadson Virus');
+//? Exercises:Level 3
+console.clear();
 // 1- Check the speed difference among the following loops: while, for, for of, forEach

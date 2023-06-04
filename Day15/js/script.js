@@ -434,3 +434,75 @@ console.log(st2.getFullName());
 console.log(st2.getPersonInfo());
 
 //! Day 15 Exercises
+// 1 - Create an Animal class. The class will have name, age, color, legs
+// properties and create different methods
+console.clear();
+class Animal {
+  constructor(name, age, type, breed, color) {
+    this.name = name;
+    this.age = age;
+    this.type = type;
+    this.breed = breed;
+    this.color = color;
+  }
+
+  get getAnimalInfo() {
+    return `This ${this.type} is ${this.name} and it's ${this.age} years old.\
+    It's breed is ${this.breed} and it's color is ${this.color}.`;
+  }
+  set setAnimalName(name) {
+    this.name = name;
+  }
+  set setAnimalAge(age) {
+    this.age = age;
+  }
+  set setAnimalColor(color) {
+    this.color = color;
+  }
+  set setAnimalType(type) {
+    this.type = type;
+  }
+  set setAnimalBreed(breed) {
+    this.breed = breed;
+  }
+
+  walk() {
+    return `Hi I'm ${this.name} the ${this.type} and I'm walking!`;
+  }
+}
+const lulu = new Animal('Louise', 5, 'Dog', 'Shih Tzu', 'White');
+console.log(lulu);
+console.log(lulu.getAnimalInfo);
+lulu.setAnimalColor = 'Brown';
+console.log(lulu.walk());
+console.log(lulu.getAnimalInfo);
+// 2 - Create a Dog and Cat child class from the Animal Class.
+
+class Dog extends Animal {
+  constructor(name, age, breed, color) {
+    super(name, age, 'Dog', breed, color);
+  }
+  //! lv2 - exercise 1 overriding an parent class method
+  walk() {
+    return `Hi I'm ${this.name} the ${this.type}, I'm walking and swinging my tail!`;
+  }
+}
+const tine = new Dog('Valentine', 5, 'HalfBreed', 'Cream');
+console.log(tine);
+console.log(tine.getAnimalInfo);
+console.log(tine.walk());
+
+class Cat extends Animal {
+  constructor(name, age, breed, color) {
+    super(name, age, 'Cat', breed, color);
+  }
+  meow() {
+    return `Hi I'm ${this.name} the ${this.type}, I'm meowing right now!`;
+  }
+}
+const gatuno = new Cat('Gatuno', 2, 'Angorah', 'Black');
+console.log(gatuno.meow());
+console.log(gatuno.getAnimalInfo);
+
+//! Exercises Level 3
+console.clear();

@@ -362,17 +362,75 @@ class ChildClass extends ParentClass{
     console.log('I am a child of the person class')
   }
 } */
-class Student extends Person{
-  saySomething(){
-    console.log('Im a child of the Person class');
+// class Student extends Person{
+//   saySomething(){
+//     console.log('Im a child of the Person class');
+//   }
+// }
+
+// const st1 = new Student('Nosdaj', 'Arievilo', 2032, 'Lhorien', 'Valfenda');
+// console.log(st1);
+// console.log(st1.saySomething());
+// console.log(st1.getFullName());
+// console.log(st1.getPersonInfo());
+
+//? Overriding methods : Allows us to override and customize methods of a
+//? parent class.
+class Student extends Person {
+  constructor(firstName, lastName, age, country, city, gender) {
+    //* super() are parameters from the parent class
+    super(firstName, lastName, age, country, city);
+    this.gender = gender;
+  }
+
+  saySomething() {
+    console.log(`I'm a child of the Person Class`);
+  }
+  getPersonInfo() {
+    let fullName = this.getFullName();
+    let skills =
+      this.skills.length > 0 &&
+      this.skills.slice(0, this.skills.length - 1).join(', ') +
+        ` and ${this.skills[this.skills.length - 1]}`;
+    let formattedSkills = skills ? `He knows ${skills}` : '';
+    let pronoun = this.gender == 'Male' ? 'He' : 'She';
+    let info = `${fullName} is ${this.age} years old. ${pronoun} lives in ${this.city}, ${this.country}. ${formattedSkills}`;
+    return info;
   }
 }
+const st1 = new Student(
+  'Paula',
+  'Tejano',
+  21,
+  'Kemmel Pinto',
+  'São Paulo',
+  'Female'
+);
+const st2 = new Student(
+  'Kuka',
+  'Beludo',
+  58,
+  'Brazoland',
+  'Fazenda Pitanga',
+  'Male'
+);
+st1.setScore = 1;
+st1.setSkill = 'HTML';
+st1.setSkill = 'CSS';
+st1.setSkill = 'JavaScript';
 
-const st1 = new Student('Nosdaj', 'Arievilo', 2032, 'Lhorien', 'Valfenda');
+st2.setScore = 1;
+st2.setSkill = 'Planning';
+st2.setSkill = 'Managing';
+st2.setSkill = 'Organizing';
+
 console.log(st1);
 console.log(st1.saySomething());
 console.log(st1.getFullName());
 console.log(st1.getPersonInfo());
 
-//? Overriding methods : Allows us to override and customize methods of a
-//? parent class.
+console.log(st2.saySomething());
+console.log(st2.getFullName());
+console.log(st2.getPersonInfo());
+
+//! Day 15 Exercises

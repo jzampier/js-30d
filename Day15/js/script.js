@@ -506,3 +506,42 @@ console.log(gatuno.getAnimalInfo);
 
 //! Exercises Level 3
 console.clear();
+class PersonAccount {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.incomes = [];
+    this.expenses = [];
+  }
+
+  get accountInfo() {
+    return `Customer name: ${this.firstName} ${this.lastName}.\
+    Incomes (R$): ${this.incomes.join(', ')}.\
+    Expenses (R$): ${this.expenses.join(', ')}.\
+    Total income (R$): ${this.totalIncome()}.\
+    Total expense (R$): ${this.totalExpense()}.\
+    Account balance (R$): ${this.accountBalance()}.`;
+  }
+  addIncome(income) {
+    return this.incomes.push(parseInt(income));
+  }
+  addExpense(expense) {
+    return this.expenses.push(parseInt(expense));
+  }
+  totalIncome() {
+    return this.incomes.reduce((total, income) => total + income, 0);
+  }
+  totalExpense() {
+    return this.expenses.reduce((total, expense) => total + expense, 0);
+  }
+  accountBalance() {
+    return this.totalIncome() - this.totalExpense();
+  }
+}
+const kemmel = new PersonAccount('Kemmel', 'Pinto');
+kemmel.addIncome(1000);
+kemmel.addIncome(2000);
+kemmel.addIncome(3000);
+
+kemmel.addExpense(2500);
+console.log(kemmel.accountInfo);

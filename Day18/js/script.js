@@ -106,14 +106,34 @@ doPromise
 
 //?exampies
 
+// const url = 'https://restcountries.com/v2/all';
+
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(url);
+//     //verificador de status da requisição
+//     if (!response.ok) {
+//       //lanca erro caso nao tenha sucesso na requisição
+//       throw new Error('Failed to fetch data');
+//     }
+//     const countries = await response.json();
+//     return countries;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+//! Day 18 Exercises
+//! Lv1
+//1 - Read the countries API using fetch and print the name of country, capital,
+// languages, population and area.
 const url = 'https://restcountries.com/v2/all';
 
 const fetchData = async () => {
   try {
+    //espera o fetch(url) para guardar na const response
     const response = await fetch(url);
-    //verificador de status da requisição
     if (!response.ok) {
-      //lanca erro caso nao tenha sucesso na requisição
       throw new Error('Failed to fetch data');
     }
     const countries = await response.json();
@@ -123,22 +143,25 @@ const fetchData = async () => {
   }
 };
 
-//! Day 18 Exercises
-//! Lv1
-//1 - Read the countries API using fetch and print the name of country, capital,
-// languages, population and area.
+const displayCountryDetails = (country) => {
+  const { name, capital, languages, population, area } = country;
+  //transforma o array de linguagens em uma string (senao o resultado fica [objeto, objeto])
+  const languagesList = languages.map((language) => language.name);
+  console.log(`País: ${name}`);
+  console.log(`Capital: ${capital}`);
+  console.log(`Linguagens: ${languagesList.join(', ')}`);
+  console.log(`População: ${population}`);
+  console.log(`Área: ${area}`);
+  console.log('---');
+};
+
 (async () => {
   try {
+    //espera o fetchData recuperar os dados
     const countriesData = await fetchData();
+    //percorre cada pais e aplica a funcao displayCountryDetails
     countriesData.forEach((country) => {
-      const { name, capital, languages, population, area } = country;
-      const languagesList = languages.map((language) => language.name);
-      console.log(`País: ${name}`);
-      console.log(`Capital: ${capital}`);
-      console.log(`Linguagens: ${languagesList.join(', ')}`);
-      console.log(`População: ${population}`);
-      console.log(`Área: ${area}`);
-      console.log('---');
+      displayCountryDetails(country);
     });
   } catch (error) {
     console.error(error);

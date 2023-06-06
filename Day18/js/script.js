@@ -127,9 +127,91 @@ doPromise
 //! Lv1
 //1 - Read the countries API using fetch and print the name of country, capital,
 // languages, population and area.
+// const url = 'https://restcountries.com/v2/all';
+
+// const fetchCountriesData = async () => {
+//   try {
+//     //espera o fetch(url) para guardar na const response
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error('Failed to fetch data');
+//     }
+//     const countries = await response.json();
+//     return countries;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+// const displayCountryDetails = (country) => {
+//   const { name, capital, languages, population, area } = country;
+//   //transforma o array de linguagens em uma string (senao o resultado fica [objeto, objeto])
+//   const languagesList = languages.map((language) => language.name);
+//   console.log(`País: ${name}`);
+//   console.log(`Capital: ${capital}`);
+//   console.log(`Linguagens: ${languagesList.join(', ')}`);
+//   console.log(`População: ${population}`);
+//   console.log(`Área: ${area}`);
+//   console.log('---');
+// };
+
+// (async () => {
+//   try {
+//     //espera o fetchCountriesData recuperar os dados
+//     const countriesData = await fetchCountriesData();
+//     //percorre cada pais e aplica a funcao displayCountryDetails
+//     countriesData.forEach((country) => {
+//       displayCountryDetails(country);
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// })();
+
+//! Lv2
+const catsAPI = 'https://api.thecatapi.com/v1/breeds';
+
+//1 Print out all the cat names in to catNames variable.
+const fetchCats = async () => {
+  try {
+    const response = await fetch(catsAPI);
+    if (!response.ok) {
+      throw new Error('Failed to fetch data from url');
+    }
+    console.log('Success on fetching data from url');
+    const cats = await response.json();
+    // console.log(cats);
+    return cats;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// const displayCatNames = (cats) => {
+//   console.log('----Cats Names----');
+//   cats.forEach((cat) => {
+//     console.log(cat.name);
+//   });
+// };
+
+// const olhaAGataiada = async () => {
+//   try {
+//     const catsData = await fetchCats();
+//     displayCatNames(catsData);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+// olhaAGataiada();
+
+//! LV3
+//1 Read the cats api and find the average weight of cat in metric unit.
+
+//2 Read the countries api and find out the 10 largest countries
 const url = 'https://restcountries.com/v2/all';
 
-const fetchData = async () => {
+const fetchCountriesData = async () => {
   try {
     //espera o fetch(url) para guardar na const response
     const response = await fetch(url);
@@ -142,28 +224,4 @@ const fetchData = async () => {
     console.error(error);
   }
 };
-
-const displayCountryDetails = (country) => {
-  const { name, capital, languages, population, area } = country;
-  //transforma o array de linguagens em uma string (senao o resultado fica [objeto, objeto])
-  const languagesList = languages.map((language) => language.name);
-  console.log(`País: ${name}`);
-  console.log(`Capital: ${capital}`);
-  console.log(`Linguagens: ${languagesList.join(', ')}`);
-  console.log(`População: ${population}`);
-  console.log(`Área: ${area}`);
-  console.log('---');
-};
-
-(async () => {
-  try {
-    //espera o fetchData recuperar os dados
-    const countriesData = await fetchData();
-    //percorre cada pais e aplica a funcao displayCountryDetails
-    countriesData.forEach((country) => {
-      displayCountryDetails(country);
-    });
-  } catch (error) {
-    console.error(error);
-  }
-})();
+//3 Read the countries api and count total number of languages in the world used as officials.

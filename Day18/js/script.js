@@ -106,20 +106,41 @@ doPromise
 
 //?exampies
 
-// const url = 'https://restcountries.com/v2/all';
-// const fetchData = async () => {
-//   try {
-//     const response = await fetch(url);
-//     const countries = await response.json();
-//     console.log(countries);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// };
-// console.warn('===== async and await');
-// fetchData();
+const url = 'https://restcountries.com/v2/all';
+
+const fetchData = async () => {
+  try {
+    const response = await fetch(url);
+    //verificador de status da requisição
+    if (!response.ok) {
+      //lanca erro caso nao tenha sucesso na requisição
+      throw new Error('Failed to fetch data');
+    }
+    const countries = await response.json();
+    return countries;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 //! Day 18 Exercises
 //! Lv1
 //1 - Read the countries API using fetch and print the name of country, capital,
 // languages, population and area.
+(async () => {
+  try {
+    const countriesData = await fetchData();
+    countriesData.forEach((country) => {
+      const { name, capital, languages, population, area } = country;
+      const languagesList = languages.map((language) => language.name);
+      console.log(`País: ${name}`);
+      console.log(`Capital: ${capital}`);
+      console.log(`Linguagens: ${languagesList.join(', ')}`);
+      console.log(`População: ${population}`);
+      console.log(`Área: ${area}`);
+      console.log('---');
+    });
+  } catch (error) {
+    console.error(error);
+  }
+})();

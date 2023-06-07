@@ -58,18 +58,27 @@ console.log(innerFunc());
 Exercises: Level 2
 1- Create a closure which has three inner functions
  */
-function usuario() {
+function getUserInfo() {
   let nome = 'RaFaeL';
-  function nomeToLow() {
+
+  function convertToLower() {
     return nome.toLowerCase();
   }
-  function nomeToUp() {
+
+  function convertToUpper() {
     return nome.toUpperCase();
   }
-  function nomeToCap() {
+
+  function capitalizeName() {
     return nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
   }
-  return { low: nomeToLow(), up: nomeToUp(), cap: nomeToCap() };
+
+  return {
+    low: convertToLower(),
+    up: convertToUpper(),
+    cap: capitalizeName(),
+  };
 }
-const user = usuario();
+
+const user = getUserInfo();
 console.log(user.low, user.up, user.cap);

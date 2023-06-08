@@ -138,4 +138,37 @@ let para2 = document.querySelector('#second-paragraph');
 let para3 = document.querySelector('#third-paragraph');
 console.log(para1.innerText, para2.innerText, para3.innerText);
 
-/* 3 */
+/* 3 e 4 - Get all the p as nodeList using document.querySelectorAll(tagname)
+and by their tag name 
+Loop through the nodeList and get the text content of each paragraph */
+const allParagraphs = document.querySelectorAll('p');
+allParagraphs.forEach((para) => {
+  console.log(para.innerText);
+});
+
+/* 5 Set a text content to paragraph the fourth paragraph,Fourth Paragraph*/
+allParagraphs[3].innerHTML = 'Fourth Paragraph';
+
+/* 6 Set id and class attribute for all the paragraphs using different
+attribute setting methods
+ */
+allParagraphs.forEach((para) => {
+  para.setAttribute('id', 'paragraph');
+  para.setAttribute('class', 'paragraph');
+});
+console.log(allParagraphs);
+
+//! Exercises lv 2
+allParagraphs.forEach((para, i) => {
+  if (i % 2 === 0) {
+    para.style.color = 'green';
+    para.style.backgroundColor = 'black';
+    para.style.fontSize = '30px';
+    para.style.border = '5px solid black';
+    para.style.fontFamily = 'Arial';
+  } else {
+    para.style.color = 'red';
+    para.style.backgroundColor = 'yellow';
+    para.style.fontSize = '50px';
+  }
+});

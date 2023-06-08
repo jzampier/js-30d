@@ -122,3 +122,20 @@
 //     title.style.fontSize = '50px';
 //   }
 // });
+
+/*
+1 Create an index.html file and put four p elements as above: Get the first
+paragraph by using document.querySelector(tagname) and tag name
+ */
+// const firstPar = document.querySelector('p');
+// console.log(firstPar.innerText);
+
+/* 2 Get each of the the paragraph using document.querySelector('#id') and by 
+their id
+ */
+let para1 = document.querySelector('#first-paragraph');
+let para2 = document.querySelector('#second-paragraph');
+let para3 = document.querySelector('#third-paragraph');
+console.log(para1.innerText, para2.innerText, para3.innerText);
+
+/* 3 */

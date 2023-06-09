@@ -19,35 +19,15 @@ function updateDateAndTime(containerElement) {
   containerElement.style.backgroundColor = randomColor;
 }
 
-function tasks() {
-  updateDateAndTime(dateAndTime);
-  changeTextColor(year);
-}
-
-// get parent element
-const wrapper = document.querySelector('.wrapper');
-const year = document.querySelector('#year');
-const list1 = wrapper.querySelector('ul');
-const mainTitle = document.querySelector('#main-title');
-// create date and time element
-const dateAndTime = document.createElement('span');
-dateAndTime.className = 'outer-span';
-dateAndTime.id = 'date-and-time';
-// get subtitle element
-const subtitle = document.querySelector('.h2-title');
-// get all li elements
-const liElements = document.querySelectorAll('li');
-// add date and time element to parent element
-wrapper.insertBefore(dateAndTime, list1);
-
-//? Styles
-// change styles according to li element status (done, ongoing, coming)
-liElements.forEach((li) => {
+function applyLiStyles(li) {
   li.style.fontSize = '16px';
   li.style.paddingRight = '350px';
   li.style.margin = '5px';
   li.style.listStyleType = 'none';
   li.style.fontFamily = 'Roboto';
+}
+
+function applyLiStatusStyles(li) {
   if (li.innerText.includes('Done')) {
     li.style.backgroundColor = '#21BF73';
     li.style.borderLeft = '10px solid #21BF73';
@@ -64,24 +44,47 @@ liElements.forEach((li) => {
     li.style.borderTop = '20px solid #EB695B';
     li.style.borderBottom = '20px solid #EB695B';
   }
-});
+}
 
-wrapper.style.display = 'grid';
-wrapper.style.justifyItems = 'center';
-subtitle.style.fontSize = '15px';
-subtitle.style.fontFamily = 'Roboto';
-subtitle.style.fontWeight = '5';
-subtitle.style.textDecoration = 'underline';
-subtitle.style.color = 'blue';
-mainTitle.style.fontFamily = 'Roboto';
-mainTitle.style.fontSize = '18px';
-mainTitle.style.fontWeight = '10';
-year.style.fontSize = '60px';
-year.style.fontFamily = 'Sans';
-year.style.fontWeight = '500';
-dateAndTime.style.fontSize = '20px';
-dateAndTime.style.fontFamily = 'Roboto';
+function initializeClock() {
+  const wrapper = document.querySelector('.wrapper');
+  const year = document.querySelector('#year');
+  const list1 = wrapper.querySelector('ul');
+  const mainTitle = document.querySelector('#main-title');
+  const dateAndTime = document.createElement('span');
+  const subtitle = document.querySelector('.h2-title');
+  const liElements = document.querySelectorAll('li');
 
-setInterval(() => {
-  tasks();
-}, 1000);
+  dateAndTime.className = 'outer-span';
+  dateAndTime.id = 'date-and-time';
+  dateAndTime.style.fontSize = '20px';
+  dateAndTime.style.fontFamily = 'Roboto';
+
+  wrapper.style.display = 'grid';
+  wrapper.style.justifyItems = 'center';
+  subtitle.style.fontSize = '15px';
+  subtitle.style.fontFamily = 'Roboto';
+  subtitle.style.fontWeight = 'bold';
+  subtitle.style.textDecoration = 'underline';
+  subtitle.style.color = 'blue';
+  mainTitle.style.fontFamily = 'Roboto';
+  mainTitle.style.fontSize = '18px';
+  mainTitle.style.fontWeight = 'bold';
+  year.style.fontSize = '60px';
+  year.style.fontFamily = 'Sans';
+  year.style.fontWeight = 'bold';
+
+  wrapper.insertBefore(dateAndTime, list1);
+
+  liElements.forEach((li) => {
+    applyLiStyles(li);
+    applyLiStatusStyles(li);
+  });
+
+  setInterval(() => {
+    updateDateAndTime(dateAndTime);
+    changeTextColor(year);
+  }, 1000);
+}
+
+initializeClock();
